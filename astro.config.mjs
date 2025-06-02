@@ -7,5 +7,5 @@ export default defineConfig({
   integrations: [tailwind(), sitemap()],
   output: 'static',
   base: '/RatLab/',
-  site: 'https://ratlab.github.io',
+  //site: 'https://ratlab.github.io',
 });
