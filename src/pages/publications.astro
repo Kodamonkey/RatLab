@@ -1,0 +1,39 @@
+---
+// src/pages/publications.astro
+import DefaultLayout from "../layouts/DefaultLayout.astro";
+import PublicationCard from "../components/PublicationCard.astro";
+
+const publications = [
+  {
+    title: "FRBSTATS: A web-based platform…",
+    journal: "arXiv:2208.03508",
+    link: "https://arxiv.org/abs/2208.03508",
+  },
+  {
+    title: "Adaptación de DRAFTS a bandas milimétricas",
+    journal: "Revista de Radioastronomía, 2023",
+    link: "#",
+  },
+  {
+    title: "Simulaciones de dispersiones en ALMA",
+    journal: "A&A, 2024",
+    link: "#",
+  },
+  // Más publicaciones…
+];
+---
+
+<DefaultLayout>
+  <h2 class="text-3xl font-bold mb-4">Publicaciones</h2>
+  <div class="space-y-4">
+    {
+      publications.map((pub) => (
+        <PublicationCard
+          title={pub.title}
+          journal={pub.journal}
+          link={pub.link}
+        />
+      ))
+    }
+  </div>
+</DefaultLayout>

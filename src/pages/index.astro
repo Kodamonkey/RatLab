@@ -1,11 +1,49 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+// src/pages/index.astro
+import DefaultLayout from "../layouts/DefaultLayout.astro";
+import Hero from "../components/Hero.astro";
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<DefaultLayout>
+  <Hero
+    title="Bienvenido a RatLab"
+    subtitle="Grupo de Radio Transientes – PUC Chile"
+    backgroundImage="/images/banner-transient.jpg"
+  />
+  <section class="mt-8">
+    <h2 class="text-2xl font-semibold mb-4">Nuestra Misión</h2>
+    <p>
+      RatLab se dedica al estudio de fenómenos transientes en radioastronomía,
+      incluyendo ráfagas rápidas de radio (FRBs) y pulsos de púlsares, para
+      entender el Universo a través del análisis de datos de distintos
+      radiotelescopios como ALMA y Effelsberg.
+    </p>
+  </section>
+
+  <section class="mt-8">
+    <h2 class="text-2xl font-semibold mb-4">Descubre Más</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <a
+        href="/about"
+        class="p-6 bg-white shadow hover:shadow-lg transition rounded"
+      >
+        <h3 class="text-xl font-semibold">Sobre Nosotros</h3>
+        <p>Conoce quiénes somos y qué hacemos en RatLab.</p>
+      </a>
+      <a
+        href="/research"
+        class="p-6 bg-white shadow hover:shadow-lg transition rounded"
+      >
+        <h3 class="text-xl font-semibold">Investigación</h3>
+        <p>Explora nuestros proyectos y datos de radio transientes.</p>
+      </a>
+      <a
+        href="/contact"
+        class="p-6 bg-white shadow hover:shadow-lg transition rounded"
+      >
+        <h3 class="text-xl font-semibold">Contacto</h3>
+        <p>Escríbenos para colaborar o preguntar dudas.</p>
+      </a>
+    </div>
+  </section>
+</DefaultLayout>

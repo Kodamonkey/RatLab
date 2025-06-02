@@ -1,0 +1,16 @@
+---
+// src/components/PublicationCard.astro
+interface Props {
+  title: string;
+  journal: string;
+  link: string;
+}
+const { title, journal, link } = Astro.props as Props;
+---
+
+<article class="border-l-4 border-blue-600 pl-4">
+  <h3 class="text-xl font-semibold">
+    <a href={link} target="_blank" class="hover:underline">{title}</a>
+  </h3>
+  <p class="text-gray-700">{journal}</p>
+</article>
