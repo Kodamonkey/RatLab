@@ -1,6 +1,18 @@
 # .github/workflows/deploy.yml
 name: Deploy to GitHub Pages
 
+# ---------------------------------------
+# 1. Dar permisos al GITHUB_TOKEN
+# ---------------------------------------
+# Estas líneas (por encima de 'on:') son
+# indispensables para que deploy-pages@v4
+# pueda solicitar el OIDC token (id-token: write)
+# y tenga permiso de escritura en Pages.
+permissions:
+  contents: read # lectura de tu código fuente
+  pages: write # para poder publicar en GitHub Pages
+  id-token: write # para minting del OIDC token que valida el despliegue
+
 on:
   push:
     branches: [main]
@@ -10,19 +22,34 @@ on:
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
+
+    # (Opcional) Si prefieres dar permisos por job:
+    # permissions:
+    #   contents: read
+    #   pages: write
+    #   id-token: write
+
     steps:
-      - name: Check out the repository
+      - name: Check out repository
         uses: actions/checkout@v3
 
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18"
+
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Build site
         run: npm run build
 
-      - name: Deploy to GitHub Pages
-        uses: withastro/action@v0
+      - name: Upload Pages Artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
-          branch: gh-pages
-          dist: ./dist
+          path: ./dist
+
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
