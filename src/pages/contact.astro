@@ -1,0 +1,55 @@
+---
+// src/pages/contact.astro
+import DefaultLayout from "../layouts/DefaultLayout.astro";
+---
+
+<DefaultLayout>
+  <h2 class="text-3xl font-bold mb-4">Contacto</h2>
+  <p>
+    Si deseas unirte a nuestras investigaciones, colaborar o simplemente tienes
+    dudas, escríbenos a:
+    <a href="mailto:ratlab@astro.puc.cl" class="text-blue-600 hover:underline"
+      >ratlab@astro.puc.cl</a
+    >
+  </p>
+  <form
+    action="https://formspree.io/f/yourFormID"
+    method="POST"
+    class="mt-6 space-y-4"
+  >
+    <div>
+      <label for="name" class="block font-medium">Nombre</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        class="mt-1 p-2 border rounded w-full"
+        required
+      />
+    </div>
+    <div>
+      <label for="email" class="block font-medium">Correo Electrónico</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        class="mt-1 p-2 border rounded w-full"
+        required
+      />
+    </div>
+    <div>
+      <label for="message" class="block font-medium">Mensaje</label>
+      <textarea
+        id="message"
+        name="message"
+        rows="4"
+        class="mt-1 p-2 border rounded w-full"
+        required></textarea>
+    </div>
+    <button
+      type="submit"
+      class="bg-blue-800 text-white py-2 px-4 rounded hover:bg-blue-700"
+      >Enviar</button
+    >
+  </form>
+</DefaultLayout>
