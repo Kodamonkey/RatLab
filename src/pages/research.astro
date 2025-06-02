@@ -1,0 +1,33 @@
+---
+import DefaultLayout from "../layouts/DefaultLayout.astro";
+---
+
+<DefaultLayout>
+  <h2 class="text-3xl font-bold mb-4">Investigación de RatLab</h2>
+  <p>En RatLab trabajamos con datos de distintos radiotelescopios:</p>
+  <div class="mt-4 space-y-4">
+    <div>
+      <h3 class="text-2xl font-semibold">ALMA Band 3 (~84 GHz)</h3>
+      <p>
+        Debido a la alta frecuencia y baja dispersión en ALMA, adaptamos
+        nuestros modelos con transferencia de dominio.
+      </p>
+    </div>
+    <div>
+      <h3 class="text-2xl font-semibold">Effelsberg L-band (1.3–1.8 GHz)</h3>
+      <p>
+        Validación de pipelines DRAFTS con datasets de Effelsberg, ampliando la
+        base de datos de FRBs y comparando con detecciones de FAST.
+      </p>
+    </div>
+    <div>
+      <h3 class="text-2xl font-semibold">FAST L-band (1.3–1.5 GHz)</h3>
+      <p>
+        Dataset original para entrenamiento de DRAFTS, con más de 2.700 ráfagas
+        registradas y pruebas de clustering no supervisado.
+      </p>
+    </div>
+  </div>
+  <!-- Si no necesitas mostrar un contador o índice, elimínalo por completo -->
+  <!-- <p>Mostrando página número: {index}</p> -->
+</DefaultLayout>

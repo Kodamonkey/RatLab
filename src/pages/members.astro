@@ -1,0 +1,44 @@
+---
+// src/pages/members.astro
+import DefaultLayout from "../layouts/DefaultLayout.astro";
+import MemberCard from "../components/MemberCard.astro";
+
+// Ejemplo de datos; idealmente vendrían de un archivo JSON o Markdown
+const team = [
+  {
+    name: "Dr. Juan Pérez",
+    role: "Profesor Asociado",
+    img: "/images/miembros/jperez.jpg",
+    profile: "https://orcid.org/0000-0001-1234-5678",
+  },
+  {
+    name: "Dra. Ana Gómez",
+    role: "Investigadora Senior",
+    img: "/images/miembros/agomez.jpg",
+    profile: "https://orcid.org/0000-0002-2345-6789",
+  },
+  {
+    name: "Lic. Pedro Silva",
+    role: "Alumno de Doctorado",
+    img: "/images/miembros/psilva.jpg",
+    profile: "https://scholar.google.com/citations?user=XYZ",
+  },
+  // Y así sucesivamente...
+];
+---
+
+<DefaultLayout>
+  <h2 class="text-3xl font-bold mb-4">Nuestro Equipo</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+    {
+      team.map((member) => (
+        <MemberCard
+          name={member.name}
+          role={member.role}
+          img={member.img}
+          profile={member.profile}
+        />
+      ))
+    }
+  </div>
+</DefaultLayout>
