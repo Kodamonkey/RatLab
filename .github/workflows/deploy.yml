@@ -1,3 +1,4 @@
+# .github/workflows/deploy.yml
 name: Deploy to GitHub Pages
 
 on:
@@ -8,17 +9,18 @@ jobs:
   build-deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Check out the repository
+        uses: actions/checkout@v3
 
       - name: Install dependencies
         run: npm install
 
-      - name: Build
+      - name: Build site
         run: npm run build
 
-      - name: Deploy
+      - name: Deploy to GitHub Pages
         uses: withastro/action@v0
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           branch: gh-pages
-          dist: "./dist"
+          dist: ./dist
