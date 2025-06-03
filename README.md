@@ -1,48 +1,106 @@
-# Astro Starter Kit: Basics
+# RatLab - Sitio Web del Grupo de Radio Transientes PUC
 
-```sh
-npm create astro@latest -- --template basics
-```
+Este repositorio contiene el código fuente del sitio web de RatLab, el Grupo de Investigación de Radio Transientes de la Pontificia Universidad Católica de Chile. El sitio está construido con [Astro](https://astro.build/) y estilizado con [Tailwind CSS](https://tailwindcss.com/).
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+## 🚀 Estructura del Proyecto
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
+El proyecto sigue la estructura estándar de Astro, con algunas adiciones específicas:
 
 ```text
 /
-├── public/
+├── public/                   # Archivos estáticos (imágenes, favicon, etc.)
+│   ├── images/
+│   │   ├── miembros/         # Imágenes de los miembros del equipo
+│   │   └── banner-transient.jpg # Imagen para el componente Hero
 │   └── favicon.svg
 ├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
+│   ├── assets/               # Otros assets como SVGs
+│   ├── components/           # Componentes reutilizables de Astro (.astro)
+│   │   ├── Navbar.astro
+│   │   ├── Footer.astro
+│   │   ├── Hero.astro
+│   │   ├── MemberCard.astro
+│   │   └── PublicationCard.astro
+│   ├── data/                 # Archivos de datos (ej. team.json, aunque actualmente vacío)
+│   │   └── team.json
+│   ├── layouts/              # Layouts base para las páginas
+│   │   └── DefaultLayout.astro
+│   ├── pages/                # Páginas del sitio (.astro)
+│   │   ├── index.astro       (Página de Inicio)
+│   │   ├── about.astro       (Sobre Nosotros)
+│   │   ├── research.astro    (Investigación)
+│   │   ├── members.astro     (Miembros)
+│   │   ├── publications.astro(Publicaciones)
+│   │   └── contact.astro     (Contacto)
+│   └── styles/               # Estilos globales y variables CSS
+│       └── global.css
+├── .github/
+│   └── workflows/
+│       └── deploy.yml        # Workflow de GitHub Actions para despliegue en GitHub Pages
+├── astro.config.mjs          # Configuración principal de Astro
+├── tailwind.config.cjs       # Configuración de Tailwind CSS
+├── package.json              # Dependencias y scripts del proyecto
+└── tsconfig.json             # Configuración de TypeScript para Astro
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+Para más detalles sobre la estructura de proyectos Astro, consulta la [documentación oficial](https://docs.astro.build/es/core-concepts/project-structure/).
 
-## 🧞 Commands
+## 🛠️ Requisitos Previos
 
-All commands are run from the root of the project, from a terminal:
+Asegúrate de tener instalado [Node.js](https://nodejs.org/) (se recomienda la versión LTS, actualmente v18 según el workflow de despliegue). `npm` viene incluido con Node.js.
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## ⚙️ Instalación
 
-## 👀 Want to learn more?
+1.  Clona el repositorio:
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+    ```bash
+    git clone https://github.com/tu-usuario/RatLab.git # Reemplaza con tu URL de repositorio
+    cd RatLab
+    ```
+
+2.  Instala las dependencias:
+    ```bash
+    npm install
+    ```
+
+## 🧞 Comandos Disponibles
+
+Todos los comandos se ejecutan desde la raíz del proyecto:
+
+| Comando             | Acción                                                                    |
+| :------------------ | :------------------------------------------------------------------------ |
+| `npm run dev`       | Inicia el servidor de desarrollo local en `http://localhost:4321/RatLab/` |
+| `npm run build`     | Compila el sitio para producción en la carpeta `./dist/`                  |
+| `npm run preview`   | Previsualiza la compilación de producción localmente                      |
+| `npm run astro ...` | Ejecuta comandos de la CLI de Astro como `astro add`, `astro check`       |
+
+**Nota importante sobre `base`:**
+Este proyecto está configurado con `base: '/RatLab/'` en [`astro.config.mjs`](astro.config.mjs). Esto significa que:
+
+- En desarrollo, el sitio se sirve desde `http://localhost:4321/RatLab/`.
+- En producción (GitHub Pages), el sitio estará disponible en `https://<tu-usuario>.github.io/RatLab/`.
+  Los enlaces internos en los componentes (como en [`src/components/Navbar.astro`](src/components/Navbar.astro)) utilizan `import.meta.env.BASE_URL` para construir las rutas correctamente.
+
+## 🚀 Despliegue
+
+Este proyecto está configurado para desplegarse automáticamente en GitHub Pages cada vez que se hace un `push` a la rama `main`. Esto se gestiona a través del workflow definido en [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml).
+
+## ✨ Características Principales
+
+- **Astro**: Framework moderno para construir sitios web rápidos y optimizados.
+- **Tailwind CSS**: Framework CSS utility-first para un diseño rápido y personalizable.
+- **Componentes Reutilizables**: Estructura modular con componentes para la barra de navegación, pie de página, tarjetas de miembros, etc.
+- **Despliegue Automatizado**: Integración con GitHub Actions para despliegue continuo en GitHub Pages.
+- **Configuración de `base`**: Preparado para ser servido desde un subdirectorio (`/RatLab/`).
+
+## 🤝 Contribuir
+
+Si deseas contribuir al proyecto, por favor sigue los siguientes pasos:
+
+1.  Haz un Fork del repositorio.
+2.  Crea una nueva rama (`git checkout -b feature/nueva-funcionalidad`).
+3.  Realiza tus cambios y haz commit (`git commit -m 'Añade nueva funcionalidad'`).
+4.  Haz push a la rama (`git push origin feature/nueva-funcionalidad`).
+5.  Abre un Pull Request.
+
+---
