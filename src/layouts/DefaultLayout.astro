@@ -3,7 +3,6 @@
 // Este layout envuelve todas las páginas, incluyendo <head>, Navbar y Footer
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
-
 ---
 
 <html lang="es">
@@ -13,9 +12,9 @@ import Footer from "../components/Footer.astro";
     <title>RatLab - Radio Transientes PUC</title>
     <link rel="stylesheet" href="/styles/global.css" />
   </head>
-  <body>
+  <body class="min-h-screen">
     <Navbar />
-    <main class="container mx-auto px-4">
+    <main class="container mx-auto px-4 py-8 mb-24">
       <slot />
       {/* Aquí va el contenido de cada página */}
     </main>

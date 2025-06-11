@@ -1,5 +1,4 @@
 ---
-// src/pages/members.astro
 import DefaultLayout from "../layouts/DefaultLayout.astro";
 import MemberCard from "../components/MemberCard.astro";
 
@@ -23,12 +22,17 @@ const team = [
     img: "/images/miembros/psilva.jpg",
     profile: "https://scholar.google.com/citations?user=XYZ",
   },
-  // Y así sucesivamente...
+  {
+    name: "Dra. Marilyn Cruces",
+    role: "Radioastronomer, Professor at UC Chile Max Planck Partner group leader",
+    img: "public/images/miembros/mcruces.jpg", // Corregido: removido 'public/'
+    profile: "https://orcid.org/0000-0001-6804-6513",
+  },
 ];
 ---
 
 <DefaultLayout>
-  <h2 class="text-3xl font-bold mb-4">Nuestro Equipo</h2>
+  <h2 class="text-3xl font-bold mb-6 text-center">Nuestro Equipo</h2>
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
     {
       team.map((member) => (
