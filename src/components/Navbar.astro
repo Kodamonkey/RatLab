@@ -15,10 +15,10 @@ const resolveUrl = (path: string) => {
   style={`background: url('${resolveUrl("/images/background/background.png")}') center/cover no-repeat;`}
 >
   <div class="container mx-auto flex justify-between items-center">
-    <a href={resolveUrl("/")} class="flex items-center space-x-2 text-xl font-bold">
+    <a href={resolveUrl("/")} class="flex items-center space-x-2 text-2xl font-bold">
       <img src={resolveUrl("/images/logo/ratLab-logo.png")} alt="Logo RatLab" class="h-20 w-20" />
     </a>
-    <ul class="flex space-x-6">
+    <ul class="flex space-x-6 text-lg font-bold ml-auto"> <!-- Agregué ml-auto para alinear al borde derecho -->
       <li><a href={resolveUrl("/")}>Inicio</a></li>
       <li><a href={resolveUrl("/about")}>Sobre Nosotros</a></li>
       <li><a href={resolveUrl("/research")}>Investigación</a></li>
