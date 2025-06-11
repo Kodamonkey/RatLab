@@ -41,8 +41,8 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build site
-        run: npm run build
+      - name: Build
+        run: npm run build # o el comando de compilación de tu proyecto Astro
 
       - name: Upload Pages Artifact
         uses: actions/upload-pages-artifact@v3
