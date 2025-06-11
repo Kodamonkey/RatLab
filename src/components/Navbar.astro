@@ -1,21 +1,23 @@
 ---
 // src/components/Navbar.astro
 const base = import.meta.env.BASE_URL;
-// Helper para construir las URLs correctamente, asegurando que no haya dobles barras
-// y que la raíz se maneje adecuadamente.
 const resolveUrl = (path: string) => {
   if (path === "/") {
-    return base; // Para la raíz, BASE_URL ya es correcto (ej: /RatLab/ o /)
+    return base;
   }
-  // Elimina la barra inicial de 'path' si existe, ya que BASE_URL termina con '/'
   const cleanPath = path.startsWith("/") ? path.substring(1) : path;
   return `${base}${cleanPath}`;
 };
 ---
 
-<nav class="bg-blue-800 text-white p-4">
+<nav
+  class="text-white p-4"
+  style={`background: url('${resolveUrl("/images/background/background.png")}') center/cover no-repeat;`}
+>
   <div class="container mx-auto flex justify-between items-center">
-    <a href={resolveUrl("/")} class="text-xl font-bold">RatLab PUC</a>
+    <a href={resolveUrl("/")} class="flex items-center space-x-2 text-xl font-bold">
+      <img src={resolveUrl("/images/logo/ratLab-logo.png")} alt="Logo RatLab" class="h-20 w-20" />
+    </a>
     <ul class="flex space-x-6">
       <li><a href={resolveUrl("/")}>Inicio</a></li>
       <li><a href={resolveUrl("/about")}>Sobre Nosotros</a></li>
