@@ -11,31 +11,31 @@ const resolveUrl = (path: string) => {
   return `${base}${cleanPath}`;
 };
 
-// Ejemplo de datos; idealmente vendrían de un archivo JSON o Markdown
+// Example data; ideally this would come from a JSON or Markdown file
 const team = [
   {
-    name: "Dra. Marilyn Cruces",
+    name: "Dr. Marilyn Cruces",
     role: "Radioastronomer, Professor at UC Chile Max Planck Partner group leader",
-    img: resolveUrl("/images/miembros/mcruces.jpg"), // Usando resolveUrl()
+    img: resolveUrl("/images/miembros/mcruces.jpg"), // Using resolveUrl()
     profile: "https://orcid.org/0000-0001-6804-6513",
   },
   {
     name: "Cristóbal Braga",
     role: "Radioastronomer, Researcher",
-    img: resolveUrl("/images/miembros/cbraga.jpg"), // Usando resolveUrl()
+    img: resolveUrl("/images/miembros/cbraga.jpg"), // Using resolveUrl()
     profile: "https://orcid.org/0009-0000-6017-4211",
   },
   {
     name: "Josefina Vera-Casanova",
     role: "Radioastronomer, Researcher",
-    img: resolveUrl("/images/miembros/jvera.jpg"), // Usando resolveUrl()
+    img: resolveUrl("/images/miembros/jvera.jpg"), // Using resolveUrl()
     profile: "https://orcid.org/0009-0002-6002-0575",
   },
 ];
 ---
 
 <DefaultLayout>
-  <h2 class="text-3xl font-bold mb-6 text-center">Nuestro Equipo</h2>
+  <h2 class="text-3xl font-bold mb-6 text-center">Our Team</h2>
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
     {
       team.map((member) => (

@@ -3,31 +3,29 @@ import DefaultLayout from "../layouts/DefaultLayout.astro";
 ---
 
 <DefaultLayout>
-  <h2 class="text-3xl font-bold mb-4">Investigación de RatLab</h2>
-  <p>En RatLab trabajamos con datos de distintos radiotelescopios:</p>
+  <h2 class="text-3xl font-bold mb-4">RatLab Research</h2>
+  <p>At RatLab, we work with data from various radio telescopes:</p>
   <div class="mt-4 space-y-4">
     <div>
       <h3 class="text-2xl font-semibold">ALMA Band 3 (~84 GHz)</h3>
       <p>
-        Debido a la alta frecuencia y baja dispersión en ALMA, adaptamos
-        nuestros modelos con transferencia de dominio.
+        Due to the high frequency and low dispersion in ALMA, we adapt our
+        models using domain transfer.
       </p>
     </div>
     <div>
       <h3 class="text-2xl font-semibold">Effelsberg L-band (1.3–1.8 GHz)</h3>
       <p>
-        Validación de pipelines DRAFTS con datasets de Effelsberg, ampliando la
-        base de datos de FRBs y comparando con detecciones de FAST.
+        Validation of DRAFTS pipelines with Effelsberg datasets, expanding the
+        FRB database and comparing with FAST detections.
       </p>
     </div>
     <div>
       <h3 class="text-2xl font-semibold">FAST L-band (1.3–1.5 GHz)</h3>
       <p>
-        Dataset original para entrenamiento de DRAFTS, con más de 2.700 ráfagas
-        registradas y pruebas de clustering no supervisado.
+        Original dataset for DRAFTS training, with over 2,700 recorded bursts
+        and unsupervised clustering tests.
       </p>
     </div>
   </div>
-  <!-- Si no necesitas mostrar un contador o índice, elimínalo por completo -->
-  <!-- <p>Mostrando página número: {index}</p> -->
 </DefaultLayout>
