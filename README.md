@@ -75,11 +75,19 @@ Todos los comandos se ejecutan desde la raíz del proyecto:
 | `npm run astro ...` | Ejecuta comandos de la CLI de Astro como `astro add`, `astro check`       |
 
 **Nota importante sobre `base`:**
-Este proyecto está configurado con `base: '/RatLab/'` en [`astro.config.mjs`](astro.config.mjs). Esto significa que:
+Originalmente el proyecto estaba configurado con `base: '/RatLab/'` en
+[`astro.config.mjs`](astro.config.mjs) para ser publicado en un subdirectorio de
+GitHub Pages. Si lo despliegas en Netlify (o en la raíz de cualquier servidor)
+debes cambiar la opción a `base: '/'`; de lo contrario los estilos e imágenes no
+se cargarán correctamente.
 
-- En desarrollo, el sitio se sirve desde `http://localhost:4321/RatLab/`.
-- En producción (GitHub Pages), el sitio estará disponible en `https://<tu-usuario>.github.io/RatLab/`.
-  Los enlaces internos en los componentes (como en [`src/components/Navbar.astro`](src/components/Navbar.astro)) utilizan `import.meta.env.BASE_URL` para construir las rutas correctamente.
+- En desarrollo con `base: '/RatLab/'` el sitio se sirve desde
+  `http://localhost:4321/RatLab/`.
+- En producción (por ejemplo GitHub Pages) el sitio estará disponible en
+  `https://<tu-usuario>.github.io/RatLab/`.
+  Los enlaces internos en los componentes (como en
+  [`src/components/Navbar.astro`](src/components/Navbar.astro)) utilizan
+  `import.meta.env.BASE_URL` para construir las rutas correctamente.
 
 ## 🚀 Despliegue
 
