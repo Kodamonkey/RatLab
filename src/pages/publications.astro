@@ -1,138 +1,78 @@
 ---
 import DefaultLayout from "../layouts/DefaultLayout.astro";
 
-interface ADSDoc {
-  bibcode: string;
-  title?: string | string[];
-  pub?: string;
-  year?: number | string;
-}
-
 interface Publication {
   title: string;
   journal: string;
   link: string;
 }
 
-const ADS_API_KEY = import.meta.env.PUBLIC_ADS_API_KEY;
 const LIBRARY_ID = "q7ce2driS9W-SkN3IcOqNA";
-
-async function fetchPublications(): Promise<Publication[]> {
-  const params = new URLSearchParams({
-    fl: "bibcode,title,pub,year",
-    rows: "50",
-    sort: "date desc",
-  });
-
-  const res = await fetch(
-    `https://api.adsabs.harvard.edu/v1/biblib/libraries/${LIBRARY_ID}?${params}`,
-    {
-      headers: {
-        Authorization: `Bearer ${ADS_API_KEY}`,
-        Accept: "application/json",
-      },
-    }
-  );
-  if (!res.ok) {
-    console.error("Error ADS:", await res.text());
-    return [];
-  }
-
-  const { solr } = (await res.json()) as {
-    solr: { response: { docs: ADSDoc[] } };
-  };
-
-  return solr.response.docs.map((doc): Publication => {
-    // 1) Narrowing de title a string siempre
-    let titleStr: string;
-    if (Array.isArray(doc.title) && doc.title.length > 0) {
-      titleStr = doc.title[0];
-    } else if (typeof doc.title === "string") {
-      titleStr = doc.title;
-    } else {
-      titleStr = doc.bibcode;
-    }
-
-    // 2) Narrowing de journal a string
-    const journalStr =
-      doc.pub && doc.year ? `${doc.pub}, ${doc.year}` : (doc.pub ?? "");
-
-    const link = `https://ui.adsabs.harvard.edu/abs/${doc.bibcode}/abstract`;
-
-    return {
-      title: titleStr,
-      journal: journalStr,
-      link,
-    };
-  });
-}
-
 ---
 
 <DefaultLayout>
-  <h2 class="text-3xl font-bold mb-4">Publicaciones</h2>
-  <div id="publication-list" class="space-y-4"></div>
-  <script type="module">
-    const ADS_API_KEY = {JSON.stringify(ADS_API_KEY)};
-    const LIBRARY_ID = {JSON.stringify(LIBRARY_ID)};
+  <div class="mb-8">
+    <h2 class="text-3xl font-bold mb-4">Publications</h2>
+    <p class="text-gray-600 mb-6">
+      You can also view our complete publication list on 
+      <a 
+        href={`https://ui.adsabs.harvard.edu/public-libraries/${LIBRARY_ID}`}
+        target="_blank" 
+        class="text-blue-600 hover:underline font-medium"
+      >
+        ADS (Astrophysics Data System)
+      </a>
+    </p>
+  </div>
+  
+  <div id="publications-container">
+    <p class="text-gray-500">Loading publications...</p>
+  </div>
 
-    async function fetchPublications() {
-      const params = new URLSearchParams({
-        fl: "bibcode,title,pub,year",
-        rows: "50",
-        sort: "date desc",
-      });
-
-      const res = await fetch(
-        `https://api.adsabs.harvard.edu/v1/biblib/libraries/${LIBRARY_ID}?${params}`,
-        {
-          headers: {
-            Authorization: `Bearer ${ADS_API_KEY}`,
-            Accept: "application/json",
-          },
-        }
-      );
-      if (!res.ok) {
-        console.error("Error ADS:", await res.text());
-        return [];
-      }
-
-      const { solr } = await res.json();
-      return solr.response.docs.map((doc) => {
-        let titleStr;
-        if (Array.isArray(doc.title) && doc.title.length > 0) {
-          titleStr = doc.title[0];
-        } else if (typeof doc.title === "string") {
-          titleStr = doc.title;
-        } else {
-          titleStr = doc.bibcode;
-        }
-
-        const journalStr =
-          doc.pub && doc.year ? `${doc.pub}, ${doc.year}` : doc.pub ?? "";
-
-        const link = `https://ui.adsabs.harvard.edu/abs/${doc.bibcode}/abstract`;
-        return { title: titleStr, journal: journalStr, link };
-      });
+  <script>
+    interface Publication {
+      title: string;
+      journal: string;
+      link: string;
     }
 
     async function loadPublications() {
-      const container = document.getElementById("publication-list");
-      container.textContent = "Cargando...";
+      const container = document.getElementById('publications-container');
+      
+      if (!container) {
+        console.error('Publications container not found');
+        return;
+      }
+      
       try {
-        const pubs = await fetchPublications();
-        container.textContent = "";
-        for (const pub of pubs) {
-          const article = document.createElement("article");
-          article.className = "border-l-4 border-blue-600 pl-4";
-          article.innerHTML = `\n            <h3 class="text-xl font-semibold">\n              <a href="${pub.link}" target="_blank" class="hover:underline">${pub.title}</a>\n            </h3>\n            <p class="text-gray-700">${pub.journal}</p>`;
-          container.appendChild(article);
+        const response = await fetch('/api/publications');
+        const publications: Publication[] = await response.json();
+        
+        if ('error' in publications) {
+          throw new Error((publications as any).error);
         }
-      } catch (err) {
-        container.textContent = "Error al cargar publicaciones";
+        
+        container.innerHTML = publications.length === 0 
+          ? '<p class="text-gray-500">No publications found.</p>'
+          : publications.map((pub: Publication) => `
+              <article class="border-l-4 border-blue-600 pl-4 mb-6">
+                <h3 class="text-xl font-semibold mb-2">
+                  <a href="${pub.link}" target="_blank" class="hover:underline text-blue-600">
+                    ${pub.title}
+                  </a>
+                </h3>
+                <p class="text-gray-700">${pub.journal}</p>
+              </article>
+            `).join('');
+            
+      } catch (error) {
+        container.innerHTML = `
+          <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
+            <strong>Error:</strong> Failed to load publications
+          </div>`;
       }
     }
-
+    
     loadPublications();
   </script>
 </DefaultLayout>
