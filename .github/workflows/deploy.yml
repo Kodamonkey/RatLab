@@ -44,7 +44,7 @@ jobs:
       - name: Build
         run: npm run build # o el comando de compilación de tu proyecto Astro
         env:
-          ADS_API_KEY: ${{ secrets.ADS_API_KEY }}
+          PUBLIC_ADS_API_KEY: ${{ secrets.ADS_API_KEY }}
 
       - name: Upload Pages Artifact
         uses: actions/upload-pages-artifact@v3

@@ -1,0 +1,25 @@
+---
+// src/pages/about.astro
+import DefaultLayout from "../layouts/DefaultLayout.astro";
+---
+
+<DefaultLayout>
+  <h2 class="text-3xl font-bold mb-4">About RatLab</h2>
+  <p>
+    RatLab (Radio Transients Laboratory) is a research group at the Pontificia Universidad Católica de Chile 
+    focused on the detection and analysis of radio transient events, such as Fast Radio Bursts (FRBs) and pulsars. 
+    The group collaborates with observatories like ALMA and the Effelsberg Observatory, employing machine learning 
+    and deep learning techniques to identify signals in heterogeneous datasets.
+  </p>
+  <h3 class="mt-6 text-2xl font-semibold">Research Lines</h3>
+  <ul class="list-disc list-inside mt-2">
+    <li>Automated detection of FRBs with the DRAFTS and FRBSTATS pipelines.</li>
+    <li>
+      Simulation of artificial dispersions to generate DM-time maps.
+    </li>
+    <li>Polarization analysis in the millimeter and centimeter range.</li>
+    <li>
+      Development of algorithms for FRB clustering and pulsar classifiers.
+    </li>
+  </ul>
+</DefaultLayout>
