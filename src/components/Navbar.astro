@@ -14,7 +14,7 @@ const resolveUrl = (path: string) => {
   class="text-white p-4"
   style={`background: url('${resolveUrl("/images/background/Background3.jpg")}') center/cover no-repeat;`}
 >
-  <div class="container mx-auto flex justify-between items-center">
+  <div class="container mx-auto flex justify-between items-center relative">
     <a
       href={resolveUrl("/")}
       class="flex items-center space-x-2 text-2xl font-bold"
@@ -25,8 +25,26 @@ const resolveUrl = (path: string) => {
         class="h-30 w-30"
       />
     </a>
-    <ul class="flex space-x-6 text-2xl font-bold ml-auto items-start">
-      <!-- Agregué ml-auto para alinear al borde derecho -->
+    <button id="menu-toggle" class="md:hidden focus:outline-none ml-auto">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-8 w-8"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M4 6h16M4 12h16M4 18h16"
+        />
+      </svg>
+    </button>
+    <ul
+      id="nav-menu"
+      class="hidden absolute top-full left-0 w-full flex-col bg-black bg-opacity-90 p-4 space-y-4 text-xl md:text-2xl font-bold md:flex md:static md:flex-row md:space-y-0 md:space-x-6 md:bg-transparent md:p-0"
+    >
       <li><a href={resolveUrl("/")}>Home</a></li>
       <li><a href={resolveUrl("/outreach")}>Outreach</a></li>
       <li><a href={resolveUrl("/research")}>Research</a></li>
@@ -36,3 +54,8 @@ const resolveUrl = (path: string) => {
     </ul>
   </div>
 </nav>
+<script>
+  const btn = document.getElementById('menu-toggle');
+  const menu = document.getElementById('nav-menu');
+  btn?.addEventListener('click', () => menu?.classList.toggle('hidden'));
+</script>
