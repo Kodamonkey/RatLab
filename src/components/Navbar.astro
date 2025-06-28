@@ -11,10 +11,11 @@ const resolveUrl = (path: string) => {
 ---
 
 <nav
-  class="text-white p-4"
-  style={`background: url('${resolveUrl("/images/background/Background3.jpg")}') center/cover no-repeat;`}
+  class="relative text-white bg-center bg-cover"
+  style={`background-image: url('${resolveUrl("/images/background/Background3.jpg")}');`}
 >
-  <div class="container mx-auto flex justify-between items-center relative">
+  <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+  <div class="relative container mx-auto max-w-7xl flex items-center justify-between py-4 px-4">
     <a
       href={resolveUrl("/")}
       class="flex items-center space-x-2 text-2xl font-bold"
@@ -25,10 +26,11 @@ const resolveUrl = (path: string) => {
         class="h-30 w-30"
       />
     </a>
-    <button id="menu-toggle" class="md:hidden focus:outline-none ml-auto">
+    <button id="menu-toggle" class="lg:hidden focus:outline-none ml-auto p-2 rounded-md bg-black bg-opacity-40 hover:bg-opacity-60 transition">
       <svg
+        id="icon-open"
         xmlns="http://www.w3.org/2000/svg"
-        class="h-8 w-8"
+        class="h-7 w-7"
         fill="none"
         viewBox="0 0 24 24"
         stroke="currentColor"
@@ -40,10 +42,25 @@ const resolveUrl = (path: string) => {
           d="M4 6h16M4 12h16M4 18h16"
         />
       </svg>
+      <svg
+        id="icon-close"
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-7 w-7 hidden"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M6 18L18 6M6 6l12 12"
+        />
+      </svg>
     </button>
     <ul
       id="nav-menu"
-      class="hidden absolute top-full left-0 w-full flex-col bg-black bg-opacity-90 p-4 space-y-4 text-xl md:text-2xl font-bold md:flex md:static md:flex-row md:space-y-0 md:space-x-6 md:bg-transparent md:p-0"
+      class="hidden absolute top-full left-0 w-full flex-col bg-black bg-opacity-90 p-4 space-y-4 text-lg font-semibold text-center lg:text-xl lg:flex lg:static lg:flex-row lg:items-center lg:space-y-0 lg:space-x-8 lg:bg-transparent lg:p-0 lg:ml-8 lg:flex-1 lg:justify-center"
     >
       <li><a href={resolveUrl("/")}>Home</a></li>
       <li><a href={resolveUrl("/outreach")}>Outreach</a></li>
@@ -57,5 +74,12 @@ const resolveUrl = (path: string) => {
 <script>
   const btn = document.getElementById('menu-toggle');
   const menu = document.getElementById('nav-menu');
-  btn?.addEventListener('click', () => menu?.classList.toggle('hidden'));
+  const openIcon = document.getElementById('icon-open');
+  const closeIcon = document.getElementById('icon-close');
+
+  btn?.addEventListener('click', () => {
+    menu?.classList.toggle('hidden');
+    openIcon?.classList.toggle('hidden');
+    closeIcon?.classList.toggle('hidden');
+  });
 </script>
