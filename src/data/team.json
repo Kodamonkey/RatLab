@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Dr. Marilyn Cruces",
+    "role": "Radioastronomer, Professor at UC Chile Max Planck Partner group leader",
+    "img": "/images/miembros/mcruces.jpg",
+    "profile": "https://orcid.org/0000-0001-6804-6513"
+  },
+  {
+    "name": "Cristóbal Braga",
+    "role": "Radioastronomer, Researcher",
+    "img": "/images/miembros/cbraga.jpg",
+    "profile": "https://orcid.org/0009-0000-6017-4211"
+  },
+  {
+    "name": "Josefina Vera-Casanova",
+    "role": "Radioastronomer, Researcher",
+    "img": "/images/miembros/jvera.jpg",
+    "profile": "https://orcid.org/0009-0002-6002-0575"
+  },
+  {
+    "name": "Irma Pizarro",
+    "role": "Radioastronomer, Researcher",
+    "img": "/images/miembros/ipizarro.jpg",
+    "profile": ""
+  },
+  {
+    "name": "Nicolás Bermedo",
+    "role": "Radioastronomer, Researcher",
+    "img": "/images/miembros/nbermedo.jpg",
+    "profile": "https://orcid.org/0009-0002-5164-9187"
+  }
+]

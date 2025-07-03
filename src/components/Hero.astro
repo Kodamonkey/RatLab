@@ -3,16 +3,14 @@
 interface Props {
   title: string;
   subtitle: string;
-  backgroundImage: string;
 }
-const { title, subtitle, backgroundImage } = Astro.props as Props;
+const { title, subtitle } = Astro.props as Props;
 ---
 
 <section
-  class="h-64 md:h-96 flex items-center justify-center text-center text-white"
-  style={`background: url('${backgroundImage}') center/cover no-repeat;`}
+  class="h-64 md:h-96 flex items-center text-left text-white"
 >
-  <div class="bg-black bg-opacity-50 p-8 rounded">
+  <div class="p-8 rounded ml-8" style="background-color: #7235A2;">
     <h1 class="text-4xl font-bold">{title}</h1>
     <p class="mt-2 text-xl">{subtitle}</p>
   </div>
