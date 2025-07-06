@@ -23,9 +23,9 @@ const teamWithResolvedImg = team.map((member) => ({
   <div class="mb-8">
     <h2 class="text-3xl font-bold mb-4 text-center">Our Team</h2>
     <p class="text-gray-600 text-center max-w-3xl mx-auto">
-      Meet the researchers and scientists behind RatLab, working on cutting-edge
-      machine learning techniques for Fast Radio Burst detection and analysis
-      across multiple radio telescopes.
+      Meet the researchers and scientists behind RatLab, specializing in radio
+      astronomy, data science, and astronomical instrumentation for transient
+      source detection and analysis.
     </p>
   </div>
 
@@ -46,6 +46,7 @@ const teamWithResolvedImg = team.map((member) => ({
               name={member.name}
               currentRole={member.currentRole}
               img={member.img}
+              email={member.email}
               projectDescriptionEn={member.projectDescriptionEn}
               profiles={member.profiles}
             />
