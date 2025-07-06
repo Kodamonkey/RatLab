@@ -4,7 +4,7 @@ export interface Props {
   currentRole: string;
   img: string;
   projectDescriptionEn: string;
-  projectDescriptionEs: string;
+  projectDescriptionEs?: string;
   profiles: {
     orcid?: string;
     linkedin?: string;
@@ -43,11 +43,8 @@ const {
 
     <!-- Descripción del proyecto -->
     <div class="mb-3">
-      <div class="text-xs text-gray-600 mb-1">
-        <p class="mb-1 leading-tight">{projectDescriptionEn}</p>
-      </div>
-      <div class="text-xs text-gray-500">
-        <p class="italic leading-tight">{projectDescriptionEs}</p>
+      <div class="text-xs text-gray-600">
+        <p class="leading-tight">{projectDescriptionEn}</p>
       </div>
     </div>
 
