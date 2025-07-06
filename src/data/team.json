@@ -1,32 +1,57 @@
 [
   {
     "name": "Dr. Marilyn Cruces",
-    "role": "Radioastronomer, Professor at UC Chile Max Planck Partner group leader",
+    "currentRole": "Radioastronomer, Professor at UC Chile Max Planck Partner group leader",
     "img": "/images/miembros/mcruces.jpg",
-    "profile": "https://orcid.org/0000-0001-6804-6513"
+    "projectDescriptionEn": "Data scientist with track of handling big data and developing algorithms to automate processing and enable predictive modeling. Skilled in programing (python, C, Matlab, SQL), numerical simulations, statistical methods and project management/report.",
+    "projectDescriptionEs": "Científica de datos con experiencia en el manejo de big data y desarrollo de algoritmos para automatizar el procesamiento y habilitar el modelado predictivo. Hábil en programación (python, C, Matlab, SQL), simulaciones numéricas, métodos estadísticos y gestión de proyectos/informes.",
+    "profiles": {
+      "orcid": "https://orcid.org/0000-0001-6804-6513",
+      "linkedin": "https://www.linkedin.com/in/prof-marilyn-c-351364122/"
+    }
   },
   {
     "name": "Cristóbal Braga",
-    "role": "Radioastronomer, Researcher",
+    "currentRole": "Bachelor's Degree in Astronomy at Universidad de Chile",
     "img": "/images/miembros/cbraga.jpg",
-    "profile": "https://orcid.org/0009-0000-6017-4211"
+    "projectDescriptionEn": "Bachelor's in Astronomy at Universidad de Chile specializing in radio astronomy and data science. Focused on Fast Radio Bursts (FRBs) simulation, targeted searches for repeating FRBs, and developing integrated data processing pipelines. Interested in applying machine learning techniques for FRB classification and prediction.",
+    "projectDescriptionEs": "Licenciatura en Astronomía en la Universidad de Chile especializado en radioastronomía y ciencia de datos. Enfocado en simulación de Fast Radio Bursts (FRBs), búsquedas dirigidas de FRBs repetitivos, y desarrollo de pipelines integrados de procesamiento de datos. Interesado en aplicar técnicas de machine learning para clasificación y predicción de FRBs.",
+    "profiles": {
+      "orcid": "https://orcid.org/0009-0000-6017-4211",
+      "linkedin": "https://www.linkedin.com/in/cristóbal-braga-viñals-938144305/?locale=es_ES"
+    }
   },
   {
     "name": "Josefina Vera-Casanova",
-    "role": "Radioastronomer, Researcher",
+    "currentRole": "B.Sc. in Astronomy and M.Sc. student in Engineering at Pontificia Universidad Católica de Chile",
     "img": "/images/miembros/jvera.jpg",
-    "profile": "https://orcid.org/0009-0002-6002-0575"
+    "projectDescriptionEn": "B.Sc. in Astronomy and M.Sc. student in Engineering at PUC. Research focuses on astronomical instrumentation for radioastronomy and radio transient sources like pulsars and magnetars as FRB progenitors. Experience includes NRAO REU Chile at ALMA and MPIfR visit. Active in science outreach and women in STEM advocacy through PROVOCA AUI/NRAO program.",
+    "projectDescriptionEs": "Licenciada en Astronomía y estudiante de Magíster en Ingeniería en la PUC. Su investigación se enfoca en instrumentación astronómica para radioastronomía y fuentes transitorias radio como púlsares y magnetares como progenitores de FRBs. Experiencia incluye NRAO REU Chile en ALMA y visita al MPIfR. Activa en divulgación científica y promoción de mujeres en STEM a través del programa PROVOCA AUI/NRAO.",
+    "profiles": {
+      "orcid": "https://orcid.org/0009-0002-6002-0575",
+      "linkedin": "https://www.linkedin.com/in/josefina-vera-casanova-214ba0300/"
+    }
   },
   {
     "name": "Irma Pizarro",
-    "role": "Radioastronomer, Researcher",
+    "currentRole": "Bachelor student in Astrophysics with specialization in Data Science at Universidad de Santiago",
     "img": "/images/miembros/ipizarro.jpg",
-    "profile": ""
+    "projectDescriptionEn": "I am Irma Pizarro, currently a bachelor student in Astrophysics with a specialization in Data Science at Universidad de Santiago. My research focuses on studying the polarization properties of magnetars near the Galactic Center in Bands 1 and 3 of ALMA.",
+    "projectDescriptionEs": "Soy Irma Pizarro, actualmente estudiante de licenciatura en Astrofísica con mención en Ciencia de Datos en la Universidad de Santiago. Mi investigación se centra en el estudio de las propiedades de polarización de los magnetares cerca del centro galáctico en las bandas 1 y 3 de ALMA.",
+    "profiles": {
+      "orcid": "",
+      "linkedin": ""
+    }
   },
   {
     "name": "Nicolás Bermedo",
-    "role": "Radioastronomer, Researcher",
+    "currentRole": "Radioastronomer, Researcher",
     "img": "/images/miembros/nbermedo.jpg",
-    "profile": "https://orcid.org/0009-0002-5164-9187"
+    "projectDescriptionEn": "I research the development and optimization of deep learning-based pipelines for the automatic detection and classification of transient astronomical events, with a particular focus on Fast Radio Bursts (FRBs).",
+    "projectDescriptionEs": "Investigo el desarrollo y la optimización de pipelines basados en aprendizaje profundo para la detección y clasificación automática de eventos astronómicos transitorios, con un enfoque particular en Fast Radio Bursts (FRBs).",
+    "profiles": {
+      "orcid": "https://orcid.org/0009-0002-5164-9187",
+      "linkedin": ""
+    }
   }
 ]

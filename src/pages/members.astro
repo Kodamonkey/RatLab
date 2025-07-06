@@ -20,17 +20,39 @@ const teamWithResolvedImg = team.map((member) => ({
 ---
 
 <DefaultLayout>
-  <h2 class="text-3xl font-bold mb-6 text-center">Our Team</h2>
-  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+  <div class="mb-8">
+    <h2 class="text-3xl font-bold mb-4 text-center">Our Team</h2>
+    <p class="text-gray-600 text-center max-w-3xl mx-auto">
+      Meet the researchers and scientists behind RatLab, working on cutting-edge
+      machine learning techniques for Fast Radio Burst detection and analysis
+      across multiple radio telescopes.
+    </p>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
     {
-      teamWithResolvedImg.map((member) => (
-        <MemberCard
-          name={member.name}
-          role={member.role}
-          img={member.img}
-          profile={member.profile}
-        />
-      ))
+      teamWithResolvedImg.map((member) => {
+        // Generate ID from name for anchor links
+        const memberId = member.name
+          .toLowerCase()
+          .replace(/[^a-z0-9\s-]/g, "")
+          .replace(/\s+/g, "-")
+          .replace(/-+/g, "-")
+          .trim();
+
+        return (
+          <div id={memberId} class="scroll-mt-20">
+            <MemberCard
+              name={member.name}
+              currentRole={member.currentRole}
+              img={member.img}
+              projectDescriptionEn={member.projectDescriptionEn}
+              projectDescriptionEs={member.projectDescriptionEs}
+              profiles={member.profiles}
+            />
+          </div>
+        );
+      })
     }
   </div>
 </DefaultLayout>

@@ -1,0 +1,65 @@
+<svg width="400" height="300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f0f9ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#bfdbfe;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#bg3)"/>
+  <rect x="20" y="40" width="360" height="200" fill="#ffffff" stroke="#3b82f6" stroke-width="2" rx="8"/>
+  
+  <!-- Neural network diagram -->
+  <g fill="#3b82f6" opacity="0.8">
+    <!-- Input layer -->
+    <circle cx="60" cy="80" r="8"/>
+    <circle cx="60" cy="120" r="8"/>
+    <circle cx="60" cy="160" r="8"/>
+    <circle cx="60" cy="200" r="8"/>
+    
+    <!-- Hidden layer 1 -->
+    <circle cx="150" cy="70" r="6" fill="#8b5cf6"/>
+    <circle cx="150" cy="110" r="6" fill="#8b5cf6"/>
+    <circle cx="150" cy="150" r="6" fill="#8b5cf6"/>
+    <circle cx="150" cy="190" r="6" fill="#8b5cf6"/>
+    <circle cx="150" cy="230" r="6" fill="#8b5cf6"/>
+    
+    <!-- Hidden layer 2 -->
+    <circle cx="240" cy="90" r="6" fill="#06b6d4"/>
+    <circle cx="240" cy="130" r="6" fill="#06b6d4"/>
+    <circle cx="240" cy="170" r="6" fill="#06b6d4"/>
+    <circle cx="240" cy="210" r="6" fill="#06b6d4"/>
+    
+    <!-- Output layer -->
+    <circle cx="330" cy="120" r="8" fill="#10b981"/>
+    <circle cx="330" cy="160" r="8" fill="#10b981"/>
+  </g>
+  
+  <!-- Connections -->
+  <g stroke="#6b7280" stroke-width="1" opacity="0.3">
+    <line x1="68" y1="80" x2="142" y2="70"/>
+    <line x1="68" y1="120" x2="142" y2="110"/>
+    <line x1="68" y1="160" x2="142" y2="150"/>
+    <line x1="158" y1="110" x2="232" y2="130"/>
+    <line x1="248" y1="130" x2="322" y2="120"/>
+    <line x1="248" y1="170" x2="322" y2="160"/>
+  </g>
+  
+  <!-- Title -->
+  <text x="200" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1f2937">
+    DRAFTS Neural Network Architecture
+  </text>
+  
+  <!-- Labels -->
+  <text x="60" y="250" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#6b7280">
+    Input
+  </text>
+  <text x="150" y="250" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#6b7280">
+    Hidden 1
+  </text>
+  <text x="240" y="250" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#6b7280">
+    Hidden 2
+  </text>
+  <text x="330" y="250" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#6b7280">
+    Output
+  </text>
+</svg>
