@@ -1,0 +1,67 @@
+<svg width="400" height="300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg6" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f8fafc;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#cbd5e0;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#bg6)"/>
+  <rect x="20" y="40" width="360" height="200" fill="#ffffff" stroke="#64748b" stroke-width="2" rx="8"/>
+  
+  <!-- Domain transfer performance bars -->
+  <g opacity="0.8">
+    <!-- Source telescope (100% baseline) -->
+    <rect x="50" y="80" width="60" height="25" fill="#10b981" stroke="#059669" stroke-width="1"/>
+    <text x="80" y="95" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">100%</text>
+    
+    <!-- Target telescope with domain transfer -->
+    <rect x="50" y="120" width="55" height="25" fill="#3b82f6" stroke="#1d4ed8" stroke-width="1"/>
+    <text x="77" y="135" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">92%</text>
+    
+    <!-- Target telescope without transfer -->
+    <rect x="50" y="160" width="30" height="25" fill="#ef4444" stroke="#dc2626" stroke-width="1"/>
+    <text x="65" y="175" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">50%</text>
+  </g>
+  
+  <!-- Data requirement visualization -->
+  <g opacity="0.8" transform="translate(200, 0)">
+    <!-- Full training data -->
+    <rect x="50" y="80" width="80" height="25" fill="#6b7280" stroke="#4b5563" stroke-width="1"/>
+    <text x="90" y="95" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="white">100%</text>
+    
+    <!-- With domain transfer -->
+    <rect x="50" y="120" width="8" height="25" fill="#8b5cf6" stroke="#7c3aed" stroke-width="1"/>
+    <text x="90" y="135" text-anchor="start" font-family="Arial, sans-serif" font-size="10" fill="#374151">10%</text>
+  </g>
+  
+  <!-- Labels -->
+  <g font-family="Arial, sans-serif" font-size="11" fill="#374151">
+    <text x="120" y="95">Source Telescope</text>
+    <text x="120" y="135">Target + Transfer</text>
+    <text x="120" y="175">Target Only</text>
+    
+    <text x="290" y="75" font-weight="bold">Data Required:</text>
+    <text x="340" y="95">Full Dataset</text>
+    <text x="340" y="135">With Transfer</text>
+  </g>
+  
+  <!-- Title -->
+  <text x="200" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1f2937">
+    Domain Transfer Learning Performance
+  </text>
+  
+  <!-- Subtitle -->
+  <text x="200" y="50" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#6b7280">
+    Detection Accuracy vs Data Requirements
+  </text>
+  
+  <!-- Performance axis -->
+  <text x="25" y="95" text-anchor="middle" transform="rotate(-90, 25, 95)" font-family="Arial, sans-serif" font-size="10" fill="#6b7280">
+    Performance
+  </text>
+  
+  <!-- Data axis -->
+  <text x="225" y="95" text-anchor="middle" transform="rotate(-90, 225, 95)" font-family="Arial, sans-serif" font-size="10" fill="#6b7280">
+    Training Data
+  </text>
+</svg>

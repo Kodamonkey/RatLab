@@ -1,0 +1,665 @@
+---
+// src/pages/resources.astro
+import DefaultLayout from "../layouts/DefaultLayout.astro";
+---
+
+<DefaultLayout>
+  <div class="max-w-4xl mx-auto">
+    <!-- Hero Section -->
+    <div class="mb-12">
+      <h1 class="text-4xl font-bold mb-4 text-gray-900">Resources</h1>
+      <p class="text-xl text-gray-600">
+        Tools, datasets, and educational materials for radio astronomy research
+      </p>
+    </div>
+
+    <!-- Software & Tools -->
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold mb-6 text-gray-900">Software & Tools</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-white p-6 rounded-lg shadow-md border">
+          <h3 class="text-xl font-semibold mb-3 text-blue-800">
+            Research Tools
+          </h3>
+          <p class="text-gray-700 mb-3">
+            Machine learning tools and algorithms for radio transient detection
+            and analysis.
+          </p>
+          <div class="mb-4">
+            <span
+              class="inline-block bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm mr-2"
+              >Python</span
+            >
+            <span
+              class="inline-block bg-green-100 text-green-800 px-2 py-1 rounded text-sm mr-2"
+              >Machine Learning</span
+            >
+            <span
+              class="inline-block bg-purple-100 text-purple-800 px-2 py-1 rounded text-sm"
+              >Research</span
+            >
+          </div>
+          <ul class="text-sm text-gray-600 list-disc list-inside mb-4">
+            <li>FRB detection algorithms</li>
+            <li>Signal classification methods</li>
+            <li>Data analysis pipelines</li>
+            <li>Research documentation</li>
+          </ul>
+          <div class="flex space-x-2">
+            <a
+              href="#"
+              class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 text-sm"
+            >
+              GitHub Repository
+            </a>
+            <a
+              href="#"
+              class="border border-gray-300 text-gray-700 px-4 py-2 rounded hover:bg-gray-50 text-sm"
+            >
+              Documentation
+            </a>
+          </div>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow-md border">
+          <h3 class="text-xl font-semibold mb-3 text-blue-800">FRBSTATS</h3>
+          <p class="text-gray-700 mb-3">
+            Statistical analysis toolkit for Fast Radio Burst population
+            studies.
+          </p>
+          <div class="mb-4">
+            <span
+              class="inline-block bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm mr-2"
+              >Python</span
+            >
+            <span
+              class="inline-block bg-orange-100 text-orange-800 px-2 py-1 rounded text-sm mr-2"
+              >NumPy</span
+            >
+            <span
+              class="inline-block bg-purple-100 text-purple-800 px-2 py-1 rounded text-sm"
+              >Open Source</span
+            >
+          </div>
+          <ul class="text-sm text-gray-600 list-disc list-inside mb-4">
+            <li>Population synthesis modeling</li>
+            <li>Statistical analysis of FRB properties</li>
+            <li>Visualization tools for large datasets</li>
+            <li>Integration with observational catalogs</li>
+          </ul>
+          <div class="flex space-x-2">
+            <a
+              href="#"
+              class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 text-sm"
+            >
+              GitHub Repository
+            </a>
+            <a
+              href="#"
+              class="border border-gray-300 text-gray-700 px-4 py-2 rounded hover:bg-gray-50 text-sm"
+            >
+              Documentation
+            </a>
+          </div>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow-md border">
+          <h3 class="text-xl font-semibold mb-3 text-blue-800">
+            Radio Data Processing Suite
+          </h3>
+          <p class="text-gray-700 mb-3">
+            Comprehensive toolkit for radio astronomy data reduction and
+            analysis.
+          </p>
+          <div class="mb-4">
+            <span
+              class="inline-block bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm mr-2"
+              >Python</span
+            >
+            <span
+              class="inline-block bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-sm mr-2"
+              >Astropy</span
+            >
+            <span
+              class="inline-block bg-red-100 text-red-800 px-2 py-1 rounded text-sm"
+              >Research Use</span
+            >
+          </div>
+          <ul class="text-sm text-gray-600 list-disc list-inside mb-4">
+            <li>Time series analysis tools</li>
+            <li>RFI mitigation algorithms</li>
+            <li>Polarization calibration</li>
+            <li>Multi-frequency data handling</li>
+          </ul>
+          <div class="flex space-x-2">
+            <a
+              href="#"
+              class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 text-sm"
+            >
+              Request Access
+            </a>
+            <a
+              href="#"
+              class="border border-gray-300 text-gray-700 px-4 py-2 rounded hover:bg-gray-50 text-sm"
+            >
+              User Guide
+            </a>
+          </div>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow-md border">
+          <h3 class="text-xl font-semibold mb-3 text-blue-800">
+            ML Classifier Library
+          </h3>
+          <p class="text-gray-700 mb-3">
+            Machine learning models for astronomical transient classification.
+          </p>
+          <div class="mb-4">
+            <span
+              class="inline-block bg-blue-100 text-blue-800 px-2 py-1 rounded text-sm mr-2"
+              >Python</span
+            >
+            <span
+              class="inline-block bg-green-100 text-green-800 px-2 py-1 rounded text-sm mr-2"
+              >scikit-learn</span
+            >
+            <span
+              class="inline-block bg-purple-100 text-purple-800 px-2 py-1 rounded text-sm"
+              >Open Source</span
+            >
+          </div>
+          <ul class="text-sm text-gray-600 list-disc list-inside mb-4">
+            <li>Pre-trained models for FRB detection</li>
+            <li>Pulsar classification algorithms</li>
+            <li>Feature extraction utilities</li>
+            <li>Model evaluation tools</li>
+          </ul>
+          <div class="flex space-x-2">
+            <a
+              href="#"
+              class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 text-sm"
+            >
+              GitHub Repository
+            </a>
+            <a
+              href="#"
+              class="border border-gray-300 text-gray-700 px-4 py-2 rounded hover:bg-gray-50 text-sm"
+            >
+              Examples
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Datasets -->
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold mb-6 text-gray-900">Datasets</h2>
+      <div class="space-y-6">
+        <div class="bg-white p-6 rounded-lg shadow-md border">
+          <h3 class="text-xl font-semibold mb-3 text-green-700">
+            FRB Detection Dataset
+          </h3>
+          <p class="text-gray-700 mb-3">
+            Curated dataset of Fast Radio Burst detections with comprehensive
+            metadata.
+          </p>
+          <div class="grid md:grid-cols-2 gap-4 mb-4">
+            <div>
+              <h4 class="font-semibold mb-2">Contents:</h4>
+              <ul class="text-sm text-gray-600 list-disc list-inside">
+                <li>2,500+ confirmed FRB detections</li>
+                <li>Multi-frequency observations</li>
+                <li>Polarization measurements</li>
+                <li>Dispersion measure calculations</li>
+                <li>Host galaxy associations</li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-semibold mb-2">Applications:</h4>
+              <ul class="text-sm text-gray-600 list-disc list-inside">
+                <li>Population studies</li>
+                <li>Statistical analysis</li>
+                <li>Machine learning training</li>
+                <li>Comparative studies</li>
+                <li>Theoretical modeling</li>
+              </ul>
+            </div>
+          </div>
+          <div class="flex space-x-2">
+            <a
+              href="#"
+              class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 text-sm"
+            >
+              Download Dataset
+            </a>
+            <a
+              href="#"
+              class="border border-gray-300 text-gray-700 px-4 py-2 rounded hover:bg-gray-50 text-sm"
+            >
+              Data Description
+            </a>
+          </div>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow-md border">
+          <h3 class="text-xl font-semibold mb-3 text-green-700">
+            Pulsar Training Data
+          </h3>
+          <p class="text-gray-700 mb-3">
+            Labeled dataset for pulsar detection and classification algorithm
+            development.
+          </p>
+          <div class="grid md:grid-cols-2 gap-4 mb-4">
+            <div>
+              <h4 class="font-semibold mb-2">Contents:</h4>
+              <ul class="text-sm text-gray-600 list-disc list-inside">
+                <li>10,000+ pulsar observations</li>
+                <li>Timing solutions</li>
+                <li>Pulse profiles</li>
+                <li>Noise characteristics</li>
+                <li>Quality annotations</li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-semibold mb-2">Format:</h4>
+              <ul class="text-sm text-gray-600 list-disc list-inside">
+                <li>HDF5 and FITS formats</li>
+                <li>Python-compatible</li>
+                <li>Comprehensive metadata</li>
+                <li>Cross-referenced catalogs</li>
+                <li>Version control</li>
+              </ul>
+            </div>
+          </div>
+          <div class="flex space-x-2">
+            <a
+              href="#"
+              class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 text-sm"
+            >
+              Access Dataset
+            </a>
+            <a
+              href="#"
+              class="border border-gray-300 text-gray-700 px-4 py-2 rounded hover:bg-gray-50 text-sm"
+            >
+              Usage Guide
+            </a>
+          </div>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow-md border">
+          <h3 class="text-xl font-semibold mb-3 text-green-700">
+            Simulation Data
+          </h3>
+          <p class="text-gray-700 mb-3">
+            Synthetic radio transient data for algorithm testing and validation.
+          </p>
+          <div class="grid md:grid-cols-2 gap-4 mb-4">
+            <div>
+              <h4 class="font-semibold mb-2">Simulations:</h4>
+              <ul class="text-sm text-gray-600 list-disc list-inside">
+                <li>Dispersed pulse simulations</li>
+                <li>Realistic noise models</li>
+                <li>Multi-beam observations</li>
+                <li>Scattering effects</li>
+                <li>Instrumental responses</li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="font-semibold mb-2">Parameters:</h4>
+              <ul class="text-sm text-gray-600 list-disc list-inside">
+                <li>Variable signal-to-noise ratios</li>
+                <li>Different telescope configurations</li>
+                <li>Frequency-dependent effects</li>
+                <li>Realistic observing conditions</li>
+                <li>Configurable parameters</li>
+              </ul>
+            </div>
+          </div>
+          <div class="flex space-x-2">
+            <a
+              href="#"
+              class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 text-sm"
+            >
+              Download Simulations
+            </a>
+            <a
+              href="#"
+              class="border border-gray-300 text-gray-700 px-4 py-2 rounded hover:bg-gray-50 text-sm"
+            >
+              Simulation Manual
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Educational Materials -->
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold mb-6 text-gray-900">
+        Educational Materials
+      </h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-white p-6 rounded-lg shadow-md border">
+          <h3 class="text-xl font-semibold mb-3 text-purple-700">
+            Tutorials & Guides
+          </h3>
+          <ul class="space-y-3">
+            <li class="flex items-start">
+              <span
+                class="bg-purple-100 text-purple-800 px-2 py-1 rounded text-xs mr-3 mt-1"
+                >PDF</span
+              >
+              <div>
+                <h4 class="font-semibold text-sm">
+                  Introduction to Radio Astronomy
+                </h4>
+                <p class="text-xs text-gray-600">
+                  Comprehensive guide covering radio telescope principles and
+                  data analysis basics.
+                </p>
+              </div>
+            </li>
+            <li class="flex items-start">
+              <span
+                class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs mr-3 mt-1"
+                >Jupyter</span
+              >
+              <div>
+                <h4 class="font-semibold text-sm">FRB Detection Tutorial</h4>
+                <p class="text-xs text-gray-600">
+                  Step-by-step notebook for implementing FRB detection
+                  algorithms.
+                </p>
+              </div>
+            </li>
+            <li class="flex items-start">
+              <span
+                class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs mr-3 mt-1"
+                >Video</span
+              >
+              <div>
+                <h4 class="font-semibold text-sm">
+                  Machine Learning in Astronomy
+                </h4>
+                <p class="text-xs text-gray-600">
+                  Video series on applying ML techniques to astronomical data.
+                </p>
+              </div>
+            </li>
+            <li class="flex items-start">
+              <span
+                class="bg-orange-100 text-orange-800 px-2 py-1 rounded text-xs mr-3 mt-1"
+                >Code</span
+              >
+              <div>
+                <h4 class="font-semibold text-sm">
+                  Python for Radio Astronomy
+                </h4>
+                <p class="text-xs text-gray-600">
+                  Complete codebase with examples for radio data processing.
+                </p>
+              </div>
+            </li>
+          </ul>
+          <div class="mt-4">
+            <a
+              href="#"
+              class="bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 text-sm"
+            >
+              Browse All Tutorials
+            </a>
+          </div>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow-md border">
+          <h3 class="text-xl font-semibold mb-3 text-purple-700">
+            Course Materials
+          </h3>
+          <ul class="space-y-3">
+            <li class="flex items-start">
+              <span
+                class="bg-red-100 text-red-800 px-2 py-1 rounded text-xs mr-3 mt-1"
+                >Course</span
+              >
+              <div>
+                <h4 class="font-semibold text-sm">Advanced Radio Astronomy</h4>
+                <p class="text-xs text-gray-600">
+                  Graduate-level course materials including lectures and problem
+                  sets.
+                </p>
+              </div>
+            </li>
+            <li class="flex items-start">
+              <span
+                class="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs mr-3 mt-1"
+                >Workshop</span
+              >
+              <div>
+                <h4 class="font-semibold text-sm">
+                  Data Science for Astronomy
+                </h4>
+                <p class="text-xs text-gray-600">
+                  Workshop materials covering modern data analysis techniques.
+                </p>
+              </div>
+            </li>
+            <li class="flex items-start">
+              <span
+                class="bg-green-100 text-green-800 px-2 py-1 rounded text-xs mr-3 mt-1"
+                >Lab</span
+              >
+              <div>
+                <h4 class="font-semibold text-sm">
+                  Hands-on Signal Processing
+                </h4>
+                <p class="text-xs text-gray-600">
+                  Laboratory exercises for understanding radio signal
+                  processing.
+                </p>
+              </div>
+            </li>
+            <li class="flex items-start">
+              <span
+                class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded text-xs mr-3 mt-1"
+                >Project</span
+              >
+              <div>
+                <h4 class="font-semibold text-sm">Student Research Projects</h4>
+                <p class="text-xs text-gray-600">
+                  Templates and guidelines for undergraduate and graduate
+                  projects.
+                </p>
+              </div>
+            </li>
+          </ul>
+          <div class="mt-4">
+            <a
+              href="#"
+              class="bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 text-sm"
+            >
+              Access Course Materials
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- External Resources -->
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold mb-6 text-gray-900">
+        External Resources & Links
+      </h2>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-white p-6 rounded-lg shadow-md border">
+          <h3 class="text-xl font-semibold mb-3 text-indigo-700">
+            Telescope Archives
+          </h3>
+          <ul class="space-y-2 text-sm">
+            <li>
+              <a href="#" class="text-blue-600 hover:underline"
+                >ALMA Science Archive</a
+              >
+            </li>
+            <li>
+              <a href="#" class="text-blue-600 hover:underline"
+                >NRAO Data Archive</a
+              >
+            </li>
+            <li>
+              <a href="#" class="text-blue-600 hover:underline"
+                >ASTRON Data Portal</a
+              >
+            </li>
+            <li>
+              <a href="#" class="text-blue-600 hover:underline">CSIRO Archive</a
+              >
+            </li>
+            <li>
+              <a href="#" class="text-blue-600 hover:underline"
+                >SKA Data Products</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow-md border">
+          <h3 class="text-xl font-semibold mb-3 text-indigo-700">
+            Software Libraries
+          </h3>
+          <ul class="space-y-2 text-sm">
+            <li>
+              <a href="#" class="text-blue-600 hover:underline">Astropy</a> - Astronomy
+              in Python
+            </li>
+            <li>
+              <a href="#" class="text-blue-600 hover:underline">PRESTO</a> - Pulsar
+              analysis
+            </li>
+            <li>
+              <a href="#" class="text-blue-600 hover:underline">PSRCHIVE</a> - Pulsar
+              data analysis
+            </li>
+            <li>
+              <a href="#" class="text-blue-600 hover:underline">SIGPROC</a> - Signal
+              processing
+            </li>
+            <li>
+              <a href="#" class="text-blue-600 hover:underline">CASA</a> - Radio
+              astronomy imaging
+            </li>
+          </ul>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow-md border">
+          <h3 class="text-xl font-semibold mb-3 text-indigo-700">
+            Catalogs & Databases
+          </h3>
+          <ul class="space-y-2 text-sm">
+            <li>
+              <a href="#" class="text-blue-600 hover:underline"
+                >ATNF Pulsar Catalogue</a
+              >
+            </li>
+            <li>
+              <a href="#" class="text-blue-600 hover:underline">FRB Catalogue</a
+              >
+            </li>
+            <li>
+              <a href="#" class="text-blue-600 hover:underline"
+                >SIMBAD Database</a
+              >
+            </li>
+            <li>
+              <a href="#" class="text-blue-600 hover:underline">NED Database</a>
+            </li>
+            <li>
+              <a href="#" class="text-blue-600 hover:underline"
+                >VizieR Catalog Service</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Computing Resources -->
+    <section class="mb-12">
+      <h2 class="text-3xl font-bold mb-6 text-gray-900">Computing Resources</h2>
+      <div class="bg-gray-50 p-6 rounded-lg">
+        <div class="grid md:grid-cols-2 gap-6">
+          <div>
+            <h3 class="text-xl font-semibold mb-3 text-gray-800">
+              High-Performance Computing
+            </h3>
+            <p class="text-gray-700 mb-3">
+              Access to specialized computing resources for large-scale radio
+              astronomy data processing.
+            </p>
+            <ul class="text-sm text-gray-600 list-disc list-inside">
+              <li>GPU clusters for machine learning</li>
+              <li>High-memory systems for large datasets</li>
+              <li>Parallel processing capabilities</li>
+              <li>Cloud computing integration</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold mb-3 text-gray-800">
+              Data Storage & Management
+            </h3>
+            <p class="text-gray-700 mb-3">
+              Robust infrastructure for storing and managing large astronomical
+              datasets.
+            </p>
+            <ul class="text-sm text-gray-600 list-disc list-inside">
+              <li>Petabyte-scale storage systems</li>
+              <li>Automated backup solutions</li>
+              <li>Data versioning and tracking</li>
+              <li>Collaborative access controls</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Request Access -->
+    <section class="mb-12">
+      <div class="bg-blue-900 text-white p-8 rounded-lg">
+        <h2 class="text-2xl font-bold mb-4">Request Access to Resources</h2>
+        <p class="text-lg mb-6">
+          Many of our resources are available to the research community. Contact
+          us to request access or discuss collaborations.
+        </p>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div>
+            <h3 class="font-semibold mb-2">For Researchers:</h3>
+            <ul class="text-sm list-disc list-inside">
+              <li>Access to specialized datasets</li>
+              <li>Collaboration on tool development</li>
+              <li>Computing resource sharing</li>
+              <li>Joint research projects</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-semibold mb-2">For Students & Educators:</h3>
+            <ul class="text-sm list-disc list-inside">
+              <li>Educational dataset access</li>
+              <li>Tutorial and course materials</li>
+              <li>Mentorship opportunities</li>
+              <li>Research experience programs</li>
+            </ul>
+          </div>
+        </div>
+        <div class="mt-6">
+          <a
+            href="/contact"
+            class="bg-white text-blue-900 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+          >
+            Request Access
+          </a>
+        </div>
+      </div>
+    </section>
+  </div>
+</DefaultLayout>

@@ -15,7 +15,9 @@ const resolveUrl = (path: string) => {
   style={`background-image: url('${resolveUrl("/images/background/Background3.jpg")}');`}
 >
   <div class="absolute inset-0 bg-black bg-opacity-60"></div>
-  <div class="relative container mx-auto max-w-7xl flex items-center justify-between py-4 px-4">
+  <div
+    class="relative container mx-auto max-w-7xl flex items-center justify-between py-4 px-4"
+  >
     <a
       href={resolveUrl("/")}
       class="flex items-center space-x-2 text-2xl font-bold"
@@ -26,7 +28,10 @@ const resolveUrl = (path: string) => {
         class="h-30 w-30"
       />
     </a>
-    <button id="menu-toggle" class="lg:hidden focus:outline-none ml-auto p-2 rounded-md bg-black bg-opacity-40 hover:bg-opacity-60 transition">
+    <button
+      id="menu-toggle"
+      class="lg:hidden focus:outline-none ml-auto p-2 rounded-md bg-black bg-opacity-40 hover:bg-opacity-60 transition"
+    >
       <svg
         id="icon-open"
         xmlns="http://www.w3.org/2000/svg"
@@ -39,8 +44,7 @@ const resolveUrl = (path: string) => {
           stroke-linecap="round"
           stroke-linejoin="round"
           stroke-width="2"
-          d="M4 6h16M4 12h16M4 18h16"
-        />
+          d="M4 6h16M4 12h16M4 18h16"></path>
       </svg>
       <svg
         id="icon-close"
@@ -54,8 +58,7 @@ const resolveUrl = (path: string) => {
           stroke-linecap="round"
           stroke-linejoin="round"
           stroke-width="2"
-          d="M6 18L18 6M6 6l12 12"
-        />
+          d="M6 18L18 6M6 6l12 12"></path>
       </svg>
     </button>
     <ul
@@ -67,19 +70,20 @@ const resolveUrl = (path: string) => {
       <li><a href={resolveUrl("/research")}>Research</a></li>
       <li><a href={resolveUrl("/members")}>Members</a></li>
       <li><a href={resolveUrl("/publications")}>Publications</a></li>
+      <li><a href={resolveUrl("/resources")}>Resources</a></li>
       <li><a href={resolveUrl("/contact")}>Contact</a></li>
     </ul>
   </div>
 </nav>
 <script>
-  const btn = document.getElementById('menu-toggle');
-  const menu = document.getElementById('nav-menu');
-  const openIcon = document.getElementById('icon-open');
-  const closeIcon = document.getElementById('icon-close');
+  const btn = document.getElementById("menu-toggle");
+  const menu = document.getElementById("nav-menu");
+  const openIcon = document.getElementById("icon-open");
+  const closeIcon = document.getElementById("icon-close");
 
-  btn?.addEventListener('click', () => {
-    menu?.classList.toggle('hidden');
-    openIcon?.classList.toggle('hidden');
-    closeIcon?.classList.toggle('hidden');
+  btn?.addEventListener("click", () => {
+    menu?.classList.toggle("hidden");
+    openIcon?.classList.toggle("hidden");
+    closeIcon?.classList.toggle("hidden");
   });
 </script>
