@@ -76,7 +76,7 @@ export const GET: APIRoute = async () => {
         journal: "Monthly Notices of the Royal Astronomical Society",
         year: 2024,
         bibcode: "2024MNRAS.515.2847B",
-        abstract: "The DRAFTS pipeline represents a novel approach to automated FRB classification, incorporating deep neural networks trained on extensive datasets from FAST telescope observations.",
+        abstract: "Novel deep learning pipeline for automated FRB classification achieving 95% accuracy in distinguishing genuine signals from interference using FAST telescope data.",
         fullAbstract: "The DRAFTS pipeline represents a novel approach to automated FRB classification, incorporating deep neural networks trained on extensive datasets from FAST telescope observations. Our method achieves 95% accuracy in distinguishing genuine FRB signals from radio frequency interference and terrestrial sources. We present results from processing over 10,000 hours of FAST L-band observations, leading to the discovery of 847 new FRB candidates.",
         doi: "10.1093/mnras/stac2847",
         arxiv: "arXiv:2209.12847",
