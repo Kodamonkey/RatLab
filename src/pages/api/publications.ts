@@ -189,21 +189,21 @@ export const GET: APIRoute = async () => {
     const data = await res.json();
     
     const publications = data.solr.response.docs.map((doc: any) => {
-      const abstractText = Array.isArray(doc.abstract) ? doc.abstract[0] : doc.abstract || "";
+      const abstractText = Array.isArray(doc.abstract) ? doc.abstract[0] : doc.abstract ?? "";
       
       return {
-        title: Array.isArray(doc.title) ? doc.title[0] : doc.title || doc.bibcode,
-        authors: doc.author || [],
-        journal: doc.pub || "",
-        year: doc.year || "",
-        bibcode: doc.bibcode || "",
+        title: Array.isArray(doc.title) ? doc.title[0] : doc.title ?? doc.bibcode,
+        authors: doc.author ?? [],
+        journal: doc.pub ?? "",
+        year: doc.year ?? "",
+        bibcode: doc.bibcode ?? "",
         abstract: cleanAbstractFromADS(abstractText).substring(0, 250) + (abstractText.length > 250 ? "..." : ""),
         fullAbstract: cleanAbstractFromADS(abstractText),
         doi: doc.doi ? doc.doi[0] : "",
         arxiv: doc.arxiv_class ? `arXiv:${doc.bibcode?.replace('arXiv:', '')}` : "",
-        keywords: doc.keyword || [],
-        publicationDate: formatADSDate(doc.pubdate || ""),
-        comments: doc.comment || "",
+        keywords: doc.keyword ?? [],
+        publicationDate: formatADSDate(doc.pubdate ?? ""),
+        comments: doc.comment ?? "",
         citationCount: undefined, // Quitamos las citas
         graphics: [], // ADS doesn't provide graphics directly, would need separate API call
         link: `https://ui.adsabs.harvard.edu/abs/${doc.bibcode}/abstract`
@@ -217,7 +217,19 @@ export const GET: APIRoute = async () => {
       },
     });
   } catch (error) {
-    return new Response(JSON.stringify({ error: "Failed to fetch publications" }), {
+    // Registrar el error para debugging
+    console.error("Error fetching publications from ADS:", error);
+    
+    // Determinar mensaje de error más específico
+    let errorMessage = "Failed to fetch publications";
+    if (error instanceof Error) {
+      errorMessage = `Failed to fetch publications: ${error.message}`;
+    }
+    
+    return new Response(JSON.stringify({ 
+      error: errorMessage,
+      timestamp: new Date().toISOString()
+    }), {
       status: 500,
       headers: {
         "Content-Type": "application/json",
