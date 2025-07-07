@@ -42,10 +42,16 @@ export const GET: APIRoute = async () => {
       .trim();
   }
 
-  // Si no hay API key, usar datos de ejemplo mejorados con más detalles
+  // Si no hay API key, usar datos de ejemplo compactos
   if (!ADS_API_KEY) {
-    // Definir publicaciones de forma más compacta para reducir duplicación
-    const publicationData = [
+    // Base común para reducir duplicación
+    const basePublication = {
+      graphics: [],
+      citationCount: undefined
+    };
+
+    // Datos específicos para cada publicación
+    const pubs = [
       {
         title: "Observing radio transients with Phased ALMA: Pulses from the Galactic Centre magnetar",
         authors: ["Vera-Casanova, J.", "Cruces, M.", "Liu, K.", "Wongphechauxsorn, J.", "Braga, C. A.", "Kramer, M.", "Tome, P.", "Limaye, P.", "Espinoza-Dupouy, M. C.", "Rodriguez, L."],
@@ -57,10 +63,8 @@ export const GET: APIRoute = async () => {
         doi: "10.48550/arXiv.2504.06234",
         arxiv: "arXiv:2504.06234",
         keywords: ["High Energy Astrophysical Phenomena"],
-        pubDate: "April 2025",
-        comments: "9 pages, 5 figures, 4 tables, submitted to A&A. Comments are welcome",
-        figureCount: 2,
-        adsId: "2025arXiv250406234V"
+        publicationDate: "April 2025",
+        comments: "9 pages, 5 figures, 4 tables, submitted to A&A. Comments are welcome"
       },
       {
         title: "DRAFTS: A Deep Learning Pipeline for Fast Radio Burst Classification",
@@ -73,10 +77,8 @@ export const GET: APIRoute = async () => {
         doi: "10.1093/mnras/stac2847",
         arxiv: "arXiv:2209.12847",
         keywords: ["methods: data analysis", "radio continuum: transients", "techniques: image processing"],
-        pubDate: "November 2024",
-        comments: "15 pages, 8 figures, 3 tables, accepted for publication in MNRAS",
-        figureCount: 1,
-        adsId: "2024MNRAS.515.2847B"
+        publicationDate: "November 2024",
+        comments: "15 pages, 8 figures, 3 tables, accepted for publication in MNRAS"
       },
       {
         title: "Multi-frequency Analysis of FRB Populations using ALMA and FAST Data",
@@ -89,10 +91,8 @@ export const GET: APIRoute = async () => {
         doi: "10.1051/0004-6361/202346745",
         arxiv: "arXiv:2310.12456",
         keywords: ["radio continuum: galaxies", "methods: observational", "stars: magnetars"],
-        pubDate: "October 2023", 
-        comments: "12 pages, 6 figures, 2 tables, published in A&A",
-        figureCount: 1,
-        adsId: "2023A&A...678..45V"
+        publicationDate: "October 2023",
+        comments: "12 pages, 6 figures, 2 tables, published in A&A"
       },
       {
         title: "Unsupervised Clustering of Fast Radio Burst Morphologies",
@@ -105,10 +105,8 @@ export const GET: APIRoute = async () => {
         doi: "10.3847/2041-8213/acb12f",
         arxiv: "arXiv:2212.09876", 
         keywords: ["methods: data analysis", "methods: statistical", "radio continuum: transients"],
-        pubDate: "February 2023",
-        comments: "6 pages, 4 figures, 1 table, published in ApJL",
-        figureCount: 1,
-        adsId: "2023ApJ...945L..12B"
+        publicationDate: "February 2023",
+        comments: "6 pages, 4 figures, 1 table, published in ApJL"
       },
       {
         title: "Domain Transfer Learning for Radio Transient Detection Across Telescopes",
@@ -121,29 +119,25 @@ export const GET: APIRoute = async () => {
         doi: "10.1088/1538-3873/acd503",
         arxiv: "arXiv:2305.14789",
         keywords: ["methods: data analysis", "techniques: miscellaneous", "instrumentation: miscellaneous"],
-        pubDate: "August 2023",
-        comments: "10 pages, 7 figures, 2 tables, published in PASP",
-        figureCount: 1,
-        adsId: "2023PASP..135..084503P"
+        publicationDate: "August 2023",
+        comments: "10 pages, 7 figures, 2 tables, published in PASP"
       }
     ];
 
-    // Transformar datos a formato final, reduciendo duplicación
-    const samplePublications = publicationData.map((pub, index) => ({
+    // Generar objetos finales con mínima duplicación
+    const samplePublications = pubs.map((pub, i) => ({
+      ...basePublication,
       ...pub,
-      publicationDate: pub.pubDate,
-      graphics: Array.from({ length: pub.figureCount }, (_, i) => ({
-        url: `/images/publications/${pub.adsId.toLowerCase().replace(/[^a-z0-9]/g, '-')}-fig${i + 1}.svg`,
-        caption: `Figure ${index * 2 + i + 1}: ${pub.title.split(':')[0]} analysis`
-      })),
-      link: `https://ui.adsabs.harvard.edu/abs/${pub.adsId}/abstract`
+      graphics: [{
+        url: `/images/publications/fig-${i + 1}.svg`,
+        caption: `${pub.title.split(':')[0]} analysis`
+      }],
+      link: `https://ui.adsabs.harvard.edu/abs/${pub.bibcode}/abstract`
     }));
 
     return new Response(JSON.stringify(samplePublications), {
       status: 200,
-      headers: {
-        "Content-Type": "application/json",
-      },
+      headers: { "Content-Type": "application/json" }
     });
   }
 
