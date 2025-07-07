@@ -20,39 +20,47 @@ const teamWithResolvedImg = team.map((member) => ({
 ---
 
 <DefaultLayout>
-  <div class="mb-8">
-    <h2 class="text-3xl font-bold mb-4 text-center">Our Team</h2>
-    <p class="text-gray-600 text-center max-w-3xl mx-auto">
-      Meet the researchers and scientists behind RatLab, specializing in radio
-      astronomy, data science, and astronomical instrumentation for transient
-      source detection and analysis.
-    </p>
-  </div>
+  <div class="max-w-7xl mx-auto px-4 py-8">
+    <div class="mb-12">
+      <h2 class="text-4xl font-bold mb-6 text-center text-gray-900">
+        Our Team
+      </h2>
+      <p
+        class="text-xl text-gray-600 text-center max-w-4xl mx-auto leading-relaxed"
+      >
+        Meet the researchers and scientists behind RatLab, specializing in radio
+        astronomy, data science, and astronomical instrumentation for transient
+        source detection and analysis.
+      </p>
+    </div>
 
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-    {
-      teamWithResolvedImg.map((member) => {
-        // Generate ID from name for anchor links
-        const memberId = member.name
-          .toLowerCase()
-          .replace(/[^a-z0-9\s-]/g, "")
-          .replace(/\s+/g, "-")
-          .replace(/-+/g, "-")
-          .trim();
+    <div
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"
+    >
+      {
+        teamWithResolvedImg.map((member) => {
+          // Generate ID from name for anchor links
+          const memberId = member.name
+            .toLowerCase()
+            .replace(/[^a-z0-9\s-]/g, "")
+            .replace(/\s+/g, "-")
+            .replace(/-+/g, "-")
+            .trim();
 
-        return (
-          <div id={memberId} class="scroll-mt-20">
-            <MemberCard
-              name={member.name}
-              currentRole={member.currentRole}
-              img={member.img}
-              email={member.email}
-              projectDescriptionEn={member.projectDescriptionEn}
-              profiles={member.profiles}
-            />
-          </div>
-        );
-      })
-    }
+          return (
+            <div id={memberId} class="scroll-mt-20">
+              <MemberCard
+                name={member.name}
+                currentRole={member.currentRole}
+                img={member.img}
+                email={member.email}
+                projectDescriptionEn={member.projectDescriptionEn}
+                profiles={member.profiles}
+              />
+            </div>
+          );
+        })
+      }
+    </div>
   </div>
 </DefaultLayout>

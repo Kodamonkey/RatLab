@@ -15,7 +15,7 @@
     "name": "Cristóbal Braga",
     "currentRole": "Bachelor's Degree in Astronomy at Universidad de Chile",
     "img": "/images/miembros/cbraga.jpg",
-    "email": "cbraga@uchile.cl",
+    "email": "cristobal.braga@ug.uchile.cl",
     "projectDescriptionEn": "Bachelor's in Astronomy at Universidad de Chile specializing in radio astronomy and data science. Focused on Fast Radio Bursts (FRBs) simulation, targeted searches for repeating FRBs, and developing integrated data processing pipelines. Interested in applying machine learning techniques for FRB classification and prediction.",
     "projectDescriptionEs": "Licenciatura en Astronomía en la Universidad de Chile especializado en radioastronomía y ciencia de datos. Enfocado en simulación de Fast Radio Bursts (FRBs), búsquedas dirigidas de FRBs repetitivos, y desarrollo de pipelines integrados de procesamiento de datos. Interesado en aplicar técnicas de machine learning para clasificación y predicción de FRBs.",
     "profiles": {
@@ -27,12 +27,24 @@
     "name": "Josefina Vera-Casanova",
     "currentRole": "B.Sc. in Astronomy and M.Sc. student in Engineering at Pontificia Universidad Católica de Chile",
     "img": "/images/miembros/jvera.jpg",
-    "email": "jvera@uc.cl",
+    "email": "josefina.vera@alumni.uc.cl",
     "projectDescriptionEn": "B.Sc. in Astronomy and M.Sc. student in Engineering at PUC. Research focuses on astronomical instrumentation for radioastronomy and radio transient sources like pulsars and magnetars as FRB progenitors. Experience includes NRAO REU Chile at ALMA and MPIfR visit. Active in science outreach and women in STEM advocacy through PROVOCA AUI/NRAO program.",
     "projectDescriptionEs": "Licenciada en Astronomía y estudiante de Magíster en Ingeniería en la PUC. Su investigación se enfoca en instrumentación astronómica para radioastronomía y fuentes transitorias radio como púlsares y magnetares como progenitores de FRBs. Experiencia incluye NRAO REU Chile en ALMA y visita al MPIfR. Activa en divulgación científica y promoción de mujeres en STEM a través del programa PROVOCA AUI/NRAO.",
     "profiles": {
       "orcid": "https://orcid.org/0009-0002-6002-0575",
       "linkedin": "https://www.linkedin.com/in/josefina-vera-casanova-214ba0300/"
+    }
+  },
+  {
+    "name": "Nicolás Bermedo",
+    "currentRole": "Computer Science Engineering Student",
+    "img": "/images/miembros/nbermedo.jpg",
+    "email": "nabermedo@uc.cl",
+    "projectDescriptionEn": "I research the development and optimization of deep learning-based pipelines for the automatic detection and classification of transient astronomical events, with a particular focus on Fast Radio Bursts (FRBs).",
+    "projectDescriptionEs": "Investigo el desarrollo y la optimización de pipelines basados en aprendizaje profundo para la detección y clasificación automática de eventos astronómicos transitorios, con un enfoque particular en Fast Radio Bursts (FRBs).",
+    "profiles": {
+      "orcid": "https://orcid.org/0009-0002-5164-9187",
+      "linkedin": ""
     }
   },
   {
@@ -48,14 +60,86 @@
     }
   },
   {
-    "name": "Nicolás Bermedo",
-    "currentRole": "Radioastronomer, Researcher",
-    "img": "/images/miembros/nbermedo.jpg",
-    "email": "nicolas.bermedo@uc.cl",
-    "projectDescriptionEn": "I research the development and optimization of deep learning-based pipelines for the automatic detection and classification of transient astronomical events, with a particular focus on Fast Radio Bursts (FRBs).",
-    "projectDescriptionEs": "Investigo el desarrollo y la optimización de pipelines basados en aprendizaje profundo para la detección y clasificación automática de eventos astronómicos transitorios, con un enfoque particular en Fast Radio Bursts (FRBs).",
+    "name": "Constanza Espinoza",
+    "currentRole": "Undergraduate Astrophysics Student at Universidad de Chile / Researcher",
+    "img": "/images/miembros/cespinoza.jpg",
+    "email": "maria.espinoza.d@ug.uchile.cl",
+    "projectDescriptionEn": "Research team member working on radio astronomy and Fast Radio Burst studies. Details to be updated.",
+    "projectDescriptionEs": "Miembro del equipo de investigación trabajando en radioastronomía y estudios de Fast Radio Bursts. Detalles por actualizar.",
     "profiles": {
-      "orcid": "https://orcid.org/0009-0002-5164-9187",
+      "orcid": "",
+      "linkedin": ""
+    }
+  },
+  {
+    "name": "Etienne Cabiac",
+    "currentRole": "Student at Pontificia Universidad Católica de Chile",
+    "img": "/images/miembros/ecabiac.jpg",
+    "email": "etienne.cabiac@uc.cl",
+    "projectDescriptionEn": "Student at Pontificia Universidad Católica de Chile working with the RatLab research team. Research focus and project details to be updated.",
+    "projectDescriptionEs": "Estudiante en la Pontificia Universidad Católica de Chile trabajando con el equipo de investigación RatLab. Enfoque de investigación y detalles del proyecto por actualizar.",
+    "profiles": {
+      "orcid": "",
+      "linkedin": ""
+    }
+  },
+  {
+    "name": "Vicente Florez",
+    "currentRole": "Research Team Member",
+    "img": "/images/miembros/vflorez.jpg",
+    "email": "",
+    "projectDescriptionEn": "Research team member working with RatLab. Role and project details to be updated.",
+    "projectDescriptionEs": "Miembro del equipo de investigación trabajando con RatLab. Rol y detalles del proyecto por actualizar.",
+    "profiles": {
+      "orcid": "",
+      "linkedin": ""
+    }
+  },
+  {
+    "name": "Juan Jose Sanchez",
+    "currentRole": "Research Team Member",
+    "img": "/images/miembros/jjsanchez.jpg",
+    "email": "",
+    "projectDescriptionEn": "Research team member working with RatLab. Role and project details to be updated.",
+    "projectDescriptionEs": "Miembro del equipo de investigación trabajando con RatLab. Rol y detalles del proyecto por actualizar.",
+    "profiles": {
+      "orcid": "",
+      "linkedin": ""
+    }
+  },
+  {
+    "name": "Nicolas",
+    "currentRole": "Research Team Member",
+    "img": "/images/miembros/nicolas.jpg",
+    "email": "",
+    "projectDescriptionEn": "Research team member working with RatLab. Role and project details to be updated.",
+    "projectDescriptionEs": "Miembro del equipo de investigación trabajando con RatLab. Rol y detalles del proyecto por actualizar.",
+    "profiles": {
+      "orcid": "",
+      "linkedin": ""
+    }
+  },
+  {
+    "name": "Luis",
+    "currentRole": "Research Team Member",
+    "img": "/images/miembros/luis.jpg",
+    "email": "",
+    "projectDescriptionEn": "Research team member working with RatLab. Role and project details to be updated.",
+    "projectDescriptionEs": "Miembro del equipo de investigación trabajando con RatLab. Rol y detalles del proyecto por actualizar.",
+    "profiles": {
+      "orcid": "",
+      "linkedin": ""
+    }
+  },
+  {
+    "name": "Emiliano",
+    "currentRole": "Research Team Member",
+    "img": "/images/miembros/emiliano.jpg",
+    "email": "",
+    "projectDescriptionEn": "Research team member working with RatLab. Role and project details to be updated.",
+    "projectDescriptionEs": "Miembro del equipo de investigación trabajando con RatLab. Rol y detalles del proyecto por actualizar.",
+    "profiles": {
+      "orcid": "",
       "linkedin": ""
     }
   }
