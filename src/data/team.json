@@ -61,14 +61,14 @@
   },
   {
     "name": "Constanza Espinoza",
-    "currentRole": "Research Team Member",
+    "currentRole": "Astronomy undergraduate student",
     "img": "/images/miembros/cespinoza.jpg",
     "email": "maria.espinoza.d@ug.uchile.cl",
-    "projectDescriptionEn": "Research team member working on radio astronomy and Fast Radio Burst studies. Details to be updated.",
-    "projectDescriptionEs": "Miembro del equipo de investigación trabajando en radioastronomía y estudios de Fast Radio Bursts. Detalles por actualizar.",
+    "projectDescriptionEn": "Astronomy undergraduate student at Universidad de Chile, supervised by Prof. Tomás Cassanelli (Universidad de Chile) and Prof. Marilyn Cruces. Connie's research focuses on constraining the behaviour of periodic FRBs to better understand them, specifically modelling their activity window through time and frequency (actively collaborating with MPIfR). However, their interests extend beyond this project to include using FRBs as tools for cosmological probes, delving into observational cosmology, and employing radio astronomy for these purposes.",
+    "projectDescriptionEs": "Estudiante de pregrado en astronomía en la Universidad de Chile, supervisada por Prof. Tomás Cassanelli (Universidad de Chile) y Prof. Marilyn Cruces. La investigación de Connie se centra en restringir el comportamiento de las FRBs periódicas para comprenderlas mejor, específicamente modelando su ventana de actividad a través del tiempo y la frecuencia (colaborando activamente con MPIfR). Sin embargo, sus intereses se extienden más allá de este proyecto e incluyen el uso de FRBs como herramientas para realizar cosmológia, profundizando en la cosmología observacional y empleando la radioastronomía para estos fines.",
     "profiles": {
-      "orcid": "",
-      "linkedin": ""
+      "orcid": "https://orcid.org/0009-0009-6378-0992",
+      "linkedin": "www.linkedin.com/in/m-constanza-espinoza-dupouy-2786022b6"
     }
   },
   {
