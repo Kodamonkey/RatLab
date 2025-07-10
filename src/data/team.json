@@ -154,5 +154,17 @@
       "orcid": "",
       "linkedin": ""
     }
+  },
+    {
+    "name": "Sebastián Salgado",
+    "currentRole": "Research Team Member",
+    "img": "/images/miembros/ssalgado.jpg",
+    "email": "sebastian.salgadop@usm.cl",
+    "projectDescriptionEn": "Research team member working with RatLab. Role and project details to be updated.",
+    "projectDescriptionEs": "Miembro del equipo de investigación trabajando con RatLab. Rol y detalles del proyecto por actualizar.",
+    "profiles": {
+      "orcid": "",
+      "linkedin": ""
+    }
   }
 ]
