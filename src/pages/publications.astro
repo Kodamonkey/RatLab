@@ -139,37 +139,129 @@ const LIBRARY_ID = "q7ce2driS9W-SkN3IcOqNA";
       primaryBg: "bg-blue-50",
     };
 
-    // Member profiles mapping
+    // Member profiles mapping - Updated with all current team members
     const memberProfiles: { [key: string]: string } = {
       "Cruces, M.": "#dr-marilyn-cruces",
       "Braga, C.": "#cristobal-braga",
+      "Braga, C. A.": "#cristobal-braga",
       "Vera-Casanova, J.": "#josefina-vera-casanova",
       "Pizarro, I.": "#irma-pizarro",
       "Bermedo, N.": "#nicolas-bermedo",
+      "Espinoza, C.": "#constanza-espinoza-dupouy",
+      "Espinoza-Dupouy, C.": "#constanza-espinoza-dupouy",
+      "Rodriguez, L.": "#luis",
+      "Cabiac, E.": "#etienne-cabiac",
+      "Florez, V.": "#vicente-florez",
+      "Sanchez, J. J.": "#juan-jose-sanchez",
+      "Beckerf, L.": "#lucas",
+      "Bermudez, E.": "#emiliano",
     };
 
     function formatAuthors(authors: string[]): string {
       if (!authors || authors.length === 0) return "";
 
-      // Highlight RatLab members with links to their profiles
+      // Updated list of RatLab members with more flexible matching patterns
       const ratLabMembers = [
         "Cruces, M.",
+        "Marilyn Cruces",
+        "M. Cruces",
         "Braga, C.",
+        "Braga, C. A.",
+        "Cristobal Braga",
+        "C. Braga",
+        "C. A. Braga",
         "Vera-Casanova, J.",
+        "Josefina Vera",
+        "J. Vera",
+        "Vera-Casanova",
         "Pizarro, I.",
+        "Irma Pizarro",
+        "I. Pizarro",
         "Bermedo, N.",
+        "Nicolas Bermedo",
+        "N. Bermedo",
+        "Espinoza, C.",
+        "Espinoza-Dupouy, C.",
+        "Constanza Espinoza",
+        "C. Espinoza",
+        "Rodriguez, L.",
+        "Luis Rodriguez",
+        "L. Rodriguez",
+        "L. S. Rodriguez",
+        "Cabiac, E.",
+        "Etienne Cabiac",
+        "E. Cabiac",
+        "Florez, V.",
+        "Vicente Florez",
+        "V. Florez",
+        "Sanchez, J. J.",
+        "Juan Jose Sanchez",
+        "J. J. Sanchez",
+        "Beckerf, L.",
+        "Lucas Beckerf",
+        "L. Beckerf",
+        "Bermudez, E.",
+        "Emiliano Bermudez",
+        "E. Bermudez",
       ];
 
       const formattedAuthors = authors.slice(0, 8).map((author) => {
-        const isRatLabMember = ratLabMembers.find(
-          (member) =>
-            author.toLowerCase().includes(member.toLowerCase()) ||
-            member.toLowerCase().includes(author.toLowerCase())
-        );
+        // More flexible matching - check if any ratlab member pattern matches the author
+        const matchedMember = ratLabMembers.find((member) => {
+          const authorLower = author.toLowerCase().trim();
+          const memberLower = member.toLowerCase().trim();
 
-        if (isRatLabMember) {
-          const profileId = memberProfiles[isRatLabMember];
-          return `<a href="/members${profileId}" class="font-semibold text-blue-700 hover:text-blue-900 hover:underline bg-blue-50 px-2 py-1 rounded transition-all duration-200">${author}</a>`;
+          // Exact match
+          if (authorLower === memberLower) return true;
+
+          // Check if author contains member pattern
+          if (authorLower.includes(memberLower)) return true;
+
+          // Check if member contains author pattern
+          if (memberLower.includes(authorLower)) return true;
+
+          // Special case for hyphenated names and initials
+          const authorParts = authorLower
+            .split(/[,\s\-\.]+/)
+            .filter((p) => p.length > 0);
+          const memberParts = memberLower
+            .split(/[,\s\-\.]+/)
+            .filter((p) => p.length > 0);
+
+          // Check if main surname matches
+          if (authorParts.length > 0 && memberParts.length > 0) {
+            const authorSurname = authorParts[0];
+            const memberSurname = memberParts[0];
+            if (
+              authorSurname === memberSurname &&
+              authorParts.length >= 2 &&
+              memberParts.length >= 2
+            ) {
+              const authorInitial = authorParts[1].charAt(0);
+              const memberInitial = memberParts[1].charAt(0);
+              if (authorInitial === memberInitial) return true;
+            }
+          }
+
+          return false;
+        });
+
+        if (matchedMember) {
+          // Find the canonical form for the profile link
+          const canonicalKey = Object.keys(memberProfiles).find((key) => {
+            const keyLower = key.toLowerCase();
+            const matchedLower = matchedMember.toLowerCase();
+            return (
+              keyLower === matchedLower ||
+              keyLower.includes(matchedLower) ||
+              matchedLower.includes(keyLower)
+            );
+          });
+
+          if (canonicalKey) {
+            const profileId = memberProfiles[canonicalKey];
+            return `<a href="/members${profileId}" class="font-semibold text-blue-700 hover:text-blue-900 hover:underline bg-blue-50 px-2 py-1 rounded transition-all duration-200">${author}</a>`;
+          }
         }
 
         return author;
