@@ -42,6 +42,37 @@ export const GET: APIRoute = async () => {
       .trim();
   }
 
+  // Función para detectar miembros del equipo en autores de manera más flexible
+  function highlightTeamMembers(authors: string[]): string[] {
+    // Lista de apellidos y variaciones de miembros del equipo
+    const teamMemberPatterns = [
+      // Marilyn Cruces
+      /cruces[,\s]?\s*m/i, /marilyn\s+cruces/i, /m\.\s*cruces/i,
+      // Cristóbal Braga  
+      /braga[,\s]?\s*c/i, /cristobal\s+braga/i, /c\.\s*braga/i, /c\.\s*a\.\s*braga/i,
+      // Josefina Vera-Casanova
+      /vera[,\s]?\s*j/i, /vera-casanova/i, /josefina\s+vera/i, /j\.\s*vera/i,
+      // Nicolás Bermedo
+      /bermedo[,\s]?\s*n/i, /nicolas\s+bermedo/i, /n\.\s*bermedo/i,
+      // Irma Pizarro
+      /pizarro[,\s]?\s*i/i, /irma\s+pizarro/i, /i\.\s*pizarro/i,
+      // Constanza Espinoza
+      /espinoza[,\s]?\s*c/i, /constanza\s+espinoza/i, /c\.\s*espinoza/i, /espinoza-dupouy/i,
+      // Otros miembros comunes
+      /rodriguez[,\s]?\s*l/i, /luis\s+rodriguez/i, /l\.\s*rodriguez/i,
+      /cabiac[,\s]?\s*e/i, /etienne\s+cabiac/i, /e\.\s*cabiac/i,
+      /florez[,\s]?\s*v/i, /vicente\s+florez/i, /v\.\s*florez/i,
+      /sanchez[,\s]?\s*j/i, /juan\s+jose\s+sanchez/i, /j\.\s*j\.\s*sanchez/i,
+      /beckerf[,\s]?\s*l/i, /lucas.*beckerf/i, /l\.\s*beckerf/i,
+      /bermudez[,\s]?\s*e/i, /emiliano\s+bermudez/i, /e\.\s*bermudez/i
+    ];
+
+    return authors.map(author => {
+      const isTeamMember = teamMemberPatterns.some(pattern => pattern.test(author));
+      return isTeamMember ? `**${author}**` : author;
+    });
+  }
+
   // Si no hay API key, usar datos de ejemplo compactos
   if (!ADS_API_KEY) {
     // Base común para reducir duplicación
@@ -141,7 +172,7 @@ export const GET: APIRoute = async () => {
     });
   }
 
-  // Si hay API key, usar la API de ADS con más campos
+  // Si hay API key, usar la API de ADS con más campos y sin caché
   try {
     const params = new URLSearchParams({
       fl: "bibcode,title,author,pub,year,abstract,citation_count,doi,arxiv_class,keyword,comment,pubdate",
@@ -155,22 +186,27 @@ export const GET: APIRoute = async () => {
         headers: {
           Authorization: `Bearer ${ADS_API_KEY}`,
           Accept: "application/json",
+          // Evitar caché para obtener datos actualizados
+          "Cache-Control": "no-cache, no-store, must-revalidate",
+          "Pragma": "no-cache",
+          "Expires": "0"
         },
       }
     );
 
     if (!res.ok) {
-      throw new Error(`HTTP ${res.status}`);
+      throw new Error(`HTTP ${res.status}: ${res.statusText}`);
     }
 
     const data = await res.json();
     
     const publications = data.solr.response.docs.map((doc: any) => {
       const abstractText = Array.isArray(doc.abstract) ? doc.abstract[0] : doc.abstract ?? "";
+      const rawAuthors = doc.author ?? [];
       
       return {
         title: Array.isArray(doc.title) ? doc.title[0] : doc.title ?? doc.bibcode,
-        authors: doc.author ?? [],
+        authors: highlightTeamMembers(rawAuthors), // Aplicar detección mejorada
         journal: doc.pub ?? "",
         year: doc.year ?? "",
         bibcode: doc.bibcode ?? "",
@@ -181,9 +217,10 @@ export const GET: APIRoute = async () => {
         keywords: doc.keyword ?? [],
         publicationDate: formatADSDate(doc.pubdate ?? ""),
         comments: doc.comment ?? "",
-        citationCount: undefined, // Quitamos las citas
-        graphics: [], // ADS doesn't provide graphics directly, would need separate API call
-        link: `https://ui.adsabs.harvard.edu/abs/${doc.bibcode}/abstract`
+        citationCount: undefined,
+        graphics: [],
+        link: `https://ui.adsabs.harvard.edu/abs/${doc.bibcode}/abstract`,
+        lastUpdated: new Date().toISOString() // Timestamp de última actualización
       };
     });
 
@@ -191,6 +228,10 @@ export const GET: APIRoute = async () => {
       status: 200,
       headers: {
         "Content-Type": "application/json",
+        // Headers para evitar caché del navegador
+        "Cache-Control": "no-cache, no-store, must-revalidate",
+        "Pragma": "no-cache",
+        "Expires": "0"
       },
     });
   } catch (error) {

@@ -55,12 +55,12 @@
     "projectDescriptionEn": "I am Irma Pizarro, currently a bachelor student in Astrophysics with a specialization in Data Science at Universidad de Santiago. My research focuses on studying the polarization properties of magnetars near the Galactic Center in Bands 1 and 3 of ALMA.",
     "projectDescriptionEs": "Soy Irma Pizarro, actualmente estudiante de licenciatura en Astrofísica con mención en Ciencia de Datos en la Universidad de Santiago. Mi investigación se centra en el estudio de las propiedades de polarización de los magnetares cerca del centro galáctico en las bandas 1 y 3 de ALMA.",
     "profiles": {
-      "orcid": "https://orcid.org/my-orcid?orcid=0009-0000-7433-6322",
+      "orcid": "https://orcid.org/0009-0000-7433-6322",
       "linkedin": ""
     }
   },
   {
-    "name": "Constanza Espinoza",
+    "name": "Constanza Espinoza-Dupouy",
     "currentRole": "Astronomy undergraduate student",
     "img": "/images/miembros/cespinoza.jpg",
     "email": "maria.espinoza.d@ug.uchile.cl",
