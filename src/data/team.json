@@ -72,24 +72,24 @@
     }
   },
   {
+    "name": "Etienne Cabiac Manhey",
+    "currentRole": "B.Sc. in Electrical Engineering and M.Sc. student in Electrical Engineering at Pontificia Universidad Católica de Chile",
+    "img": "/images/miembros/Etienne.jpg",
+    "email": "etienne.cabiac@uc.cl",
+    "projectDescriptionEn": "Development of front-end multiplexation of antenna arrays using RF System-on-Chip (RFSoC) platforms. My research focuses on designing efficient hardware architectures for simultaneous signal acquisition and processing, enabling cost-effective and scalable instrumentation. These techniques are particularly aimed at improving the detection of Fast Radio Bursts (FRBs) and other transient radio phenomena.",
+    "projectDescriptionEs": "Desarrollo de la multiplexación de antenas en la parte frontal utilizando plataformas RF System-on-Chip (RFSoC). Mi investigación se centra en diseñar arquitecturas de hardware eficientes para la adquisición y el procesamiento simultáneo de señales, lo que permite una instrumentación rentable y escalable. Estas técnicas están orientadas especialmente a mejorar la detección de Estallidos Rápidos de Radio (FRBs) y otros fenómenos de radio transitorios.",
+    "profiles": {
+      "orcid": "https://orcid.org/0009-0008-5394-049X",
+      "linkedin": "https://www.linkedin.com/in/etiennecabiac/"
+    }
+  },
+  {
     "name": "Luis",
     "currentRole": "Research Team Member",
     "img": "/images/miembros/luis.jpg",
     "email": "lsrodrig@uc.cl",
     "projectDescriptionEn": "Research team member working with RatLab. Role and project details to be updated.",
     "projectDescriptionEs": "Miembro del equipo de investigación trabajando con RatLab. Rol y detalles del proyecto por actualizar.",
-    "profiles": {
-      "orcid": "",
-      "linkedin": ""
-    }
-  },
-  {
-    "name": "Etienne Cabiac",
-    "currentRole": "Research Team Member",
-    "img": "/images/miembros/ecabiac.jpg",
-    "email": "etienne.cabiac@uc.cl",
-    "projectDescriptionEn": "Student at Pontificia Universidad Católica de Chile working with the RatLab research team. Research focus and project details to be updated.",
-    "projectDescriptionEs": "Estudiante en la Pontificia Universidad Católica de Chile trabajando con el equipo de investigación RatLab. Enfoque de investigación y detalles del proyecto por actualizar.",
     "profiles": {
       "orcid": "",
       "linkedin": ""
